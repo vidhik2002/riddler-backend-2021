@@ -1,4 +1,5 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
+
 const MapSchema = new mongoose.Schema({
   startingNode: [
     {
@@ -24,10 +25,10 @@ const MapSchema = new mongoose.Schema({
       required: true,
     },
   ],
-  username:{
+  username: {
     type: String,
-    required: true
-  } 
+    required: true,
+  },
 });
-const Map = mongoose.model("map", MapSchema);
+const Map = mongoose.model('map', MapSchema);
 module.exports = Map;

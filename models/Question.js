@@ -1,26 +1,32 @@
-const mongoose = require("mongoose");
-const QuestionSchema = new mongoose.Schema({
-    question:{
-        type:String,
-        required: true
-    },
-    answer:{
-        type:[String],
-        required: true
-    },
-    questionId:{
-        type: Number,
-        required: true
-    },
-    isPortal:{
-        type: Boolean,
-        required: true
-    },
-    points:{
-        type: Number,
-        required: true
-    }
-})
+const mongoose = require('mongoose');
 
-const Question = mongoose.model("question", QuestionSchema);
+const QuestionSchema = new mongoose.Schema({
+  question: {
+    type: String,
+    required: true,
+  },
+  answer: {
+    type: [String],
+    required: true,
+  },
+  questionId: {
+    type: Number,
+    required: true,
+  },
+  isPortal: {
+    type: Boolean,
+    required: true,
+  },
+  points: {
+    type: Number,
+    required: true,
+  },
+  isLocked: {
+    type: Boolean,
+    required: true,
+    default: false,
+  },
+});
+
+const Question = mongoose.model('question', QuestionSchema);
 module.exports = Question;
