@@ -2,28 +2,38 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const bp = require('body-parser');
+
 require('dotenv/config');
-// const User = require("../models/User");
-// const Question = require("../models/Question");
-// const Map = require("../models/Map");
+
+const rateLimit = require("express-rate-limit");
+const cors = require("cors");
+
+app.use(cors());
+app.set("trust proxy", true);
+
+const apiLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100,
+});
 
 app.use(bp.urlencoded({ extended: false }));
 app.use(bp.json());
 
 const testRoute = require('./routes/testroute');
-
 app.use('/test', testRoute);
 
 const scoreRoute = require('./routes/leaderboard');
-
 app.use('/score', scoreRoute);
 
 const submitRoute = require('./routes/submit');
+app.use('/submit', submitRoute, apiLimiter);
 
-app.use('/submit', submitRoute);
+const startingRoute = require("./routes/starting");
+app.use("/starting", startingRoute);
 
-// const portalRoute = require("./routes/portal");
-// app.use("/portal", portalRoute);
+const mapRoute = require("./routes/mapdisplay");
+app.use("/map", mapRoute);
+
 
 app.get('/', (req, res) => {
   res.send('homepage');

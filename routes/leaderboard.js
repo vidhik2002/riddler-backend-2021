@@ -1,5 +1,4 @@
 const express = require('express');
-
 const router = express.Router();
 const user = require('../models/User');
 
@@ -18,6 +17,7 @@ router.get('/all', async (req, res, next) => {
         error: e,
     });
 }
+
 });
 
 module.exports = router;

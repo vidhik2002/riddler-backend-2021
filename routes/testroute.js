@@ -7,7 +7,7 @@ const question = require('../models/Question');
 const map = require('../models/Map');
 
 router.get('/', (req, res) => {
-  res.send('testpage');
+  res.redirect('/map');
 });
 
 router.post('/send', async (req, res) => {
@@ -20,7 +20,7 @@ router.post('/send', async (req, res) => {
   }
 });
 
-router.post('/nelk', async (req, res) => {
+router.post('/post1', async (req, res) => {
   try {
     console.log(req.body);
     const resp = await question.create(req.body);
@@ -30,7 +30,7 @@ router.post('/nelk', async (req, res) => {
   }
 });
 
-router.post('/sideman', async (req, res) => {
+router.post('/post2', async (req, res) => {
   try {
     console.log(req.body);
     const resp = await map.create(req.body);

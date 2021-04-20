@@ -19,6 +19,11 @@ const MapSchema = new mongoose.Schema({
       required: true,
     },
   ],
+  lockedNodes:[
+    {
+      type: Number,
+    }
+  ],
   currentNode: [
     {
       type: Number,
@@ -29,6 +34,12 @@ const MapSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  portalOpen:[
+  {
+    type: Number,
+  },
+  ]
+
 });
 const Map = mongoose.model('map', MapSchema);
 module.exports = Map;

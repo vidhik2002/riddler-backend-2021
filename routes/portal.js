@@ -6,7 +6,7 @@ const map = require("../models/Map");
 const question = require("../models/Question");
 
 
-router.get("/", async (req, res) => {
+router.get("/portal", async (req, res) => {
     const result = req.body.result
     //if(result.questionId.includes(solvedNodes)){
     if (result.answer[1].includes(ans[1])) {

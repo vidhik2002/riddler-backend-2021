@@ -1,64 +1,135 @@
-const express = require('express');
-
+const express = require("express");
 const router = express.Router();
-const fs = require('fs');
-const user = require('../models/User');
-const map = require('../models/Map');
-const question = require('../models/Question');
-const portalRoute = require('./portal');
+const fs = require("fs");
+const user = require("../models/User");
+const map = require("../models/Map");
+const question = require("../models/Question");
+const portalRoute = require("./portal");
 
-router.get('/node', async (req, res) => {
-    const { ans } = req.body;
-    const { uname } = req.body;
-    const quesId = req.body.qId;
-    const result = await question.findOne({ questionId: quesId });
-    const nodeInfo = await map.findOne({ username: uname });
-    const player = await user.findOne({ username: uname });
 
-    if (result.answer[0].includes(ans[0])) {
+//-----------------------Recursive route-----------------------------------------------------
+
+router.get("/", async(req,res) => {
+  const quesId = 2
+  const uname = "Addi"
+  const ans = ["false"];
+  let result = await question.findOne({ questionId: quesId });
+  let nodeInfo = await map.findOne({ username: uname });
+  let player = await user.findOne({ username: uname });
+  function readfile(fileName){
+    return new Promise((resolve,reject) => {
+      fs.readFile(fileName, "utf8",(err, data) => {
+        if(err)
+          reject(err)
+        else
+          resolve(data)
+      })
+    })
+  }
+
+  nodeInfo.unlockedNodes = [];
+  var isChecked=[]
+  //let quesId = nodeInfo.currentNode
+
+  if (result.answer[0].includes(ans[0])) {
     const x = nodeInfo.solvedNodes.includes(quesId);
     if (x) {
-        res.json({
-        message: 'already solved',
-        });
-        return;
+      res.json({
+        message: "already solved",
+      });
+      return;
     }
     player.score += result.points;
     nodeInfo.solvedNodes.push(quesId);
-    let obj;
-    fs.readFile('./models/questions.json', 'utf8', (err, data) => {
-    if (err) throw err;
-    obj = JSON.parse(data);
-    const q = obj[quesId.toString()].adjacent;
-    const qw = nodeInfo.unlockedNodes.concat(q);
-    console.log(q, qw);
-    nodeInfo.unlockedNodes = qw;
-    nodeInfo.unlockedNodes = nodeInfo.unlockedNodes.filter(
-        (n) => !nodeInfo.solvedNodes.includes(n),
-    );
-
-    nodeInfo.currentNode = quesId;
-    nodeInfo.save();
-    
-    if (result.isPortal === true) {
-        res.url = "/portal"
-        // router.use("/portal",portalRoute)
-        // res.status(200).send({
-        //     message: "portal question unlocked, choose a portal or continue in this biome",
-        //     isUnlocked: true
+    async function recursion(quesId) {
+        //console.log("currentNode "+ quesId);
+        let obj = JSON.parse(await readfile("./models/questions.json"));
         
-        } else {
-        res.redirect('#');
-        }
-    
-    });
+        if(result.isPortal === true)
+          {
+            if(result.answer[0].includes(ans[0]) && result.answer[1].includes(ans[1]))
+            {
+              console.log("both correct ans")
+              console.log(quesId)
+              let obj = JSON.parse(await readfile("./models/questions.json"));
+              let p = obj[quesId.toString()].portal;
+              console.log(p);
+              async function gotoPortal(quesId) {
+                
+                
+                for (var i = 0; i < p.length; i++) {
+                  if (isChecked.includes(p[i])) {
+                    console.log("already checked" + p[i]);
+                  } else if (!nodeInfo.solvedNodes.includes(p[i])) {
+                    console.log("unlocked" + p[i]);
+                    nodeInfo.unlockedNodes.push(p[i]);
+                    isChecked.push(p[i]);
+                  } else if (nodeInfo.solvedNodes.includes(p[i])) {
+                    console.log("solved" + p[i]);
+                    isChecked.push(p[i]);
+                  } else {
+                    console.log(p[i] + "couldnot be processed");
+                  }
+                }
+              }
+              await gotoPortal(quesId);
+              console.log("end of portal recursion")
+            }
+          }
+        
+        const q = obj[quesId.toString()].adjacent;
 
-    player.currentPosition = quesId;
-    player.save();
-    res.json(result);
-    } else {
-    res.redirect('#');
-}
-});
+        for (var i = 0; i < q.length; i++) {
+          console.log(q[i]);
+          if (isChecked.includes(q[i])) {
+            console.log("already checked"+q[i])
+            //return;
+          }
+          else if (!nodeInfo.solvedNodes.includes(q[i])) {
+            console.log("unlocked"+q[i])
+            nodeInfo.unlockedNodes.push(q[i]);
+            isChecked.push(q[i]);
+            //return;
+          } else if (nodeInfo.solvedNodes.includes(q[i])) {
+            console.log("solved"+q[i])
+            isChecked.push(q[i]);
+            await recursion(q[i]);
+          }else{
+            console.log(q[i]+"couldnot be processed")
+            //return ;
+          }
+        }
+    }
+    await recursion(nodeInfo.currentNode);
+    console.log("hi, end of recursion")
+    console.log(isChecked)
+    nodeInfo.currentNode = quesId
+    console.log("current node" +quesId)
+    nodeInfo.save();
+    res.json({
+      message: nodeInfo.unlockedNodes
+    })
+    if(!nodeInfo.currentNode.includes(quesId))
+    {
+      console.log("not unlocked node")
+      res.redirect("/map")
+    }
+  }else{
+    res.redirect("/map")
+  }
+})
+
+//------------------Recursive Route-------------------------------------
+
 
 module.exports = router;
+
+
+
+
+
+
+
+
+
+

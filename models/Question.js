@@ -9,10 +9,12 @@ const QuestionSchema = new mongoose.Schema({
     type: [String],
     required: true,
   },
-  questionId: {
+  questionId:
+  {
     type: Number,
     required: true,
   },
+  
   isPortal: {
     type: Boolean,
     required: true,
@@ -21,11 +23,7 @@ const QuestionSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  isLocked: {
-    type: Boolean,
-    required: true,
-    default: false,
-  },
+  
 });
 
 const Question = mongoose.model('question', QuestionSchema);
