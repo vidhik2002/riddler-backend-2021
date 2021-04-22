@@ -6,7 +6,6 @@ const map = require("../models/Map");
 const question = require("../models/Question");
 
 
-
 //------------------------Starting Node route----------------------------------------------
 router.get("/", async(req,res) =>{
     const quesId = 37
@@ -45,4 +44,5 @@ router.get("/", async(req,res) =>{
 })
 
 //------------------------Starting Node route----------------------------------------------
+
 module.exports = router;

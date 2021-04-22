@@ -1,13 +1,19 @@
 const express = require('express');
-
 const router = express.Router();
-
 const user = require('../models/User');
 const question = require('../models/Question');
 const map = require('../models/Map');
 
+
+
+//------------------------------------Test Route--------------------------------------
 router.get('/', (req, res) => {
   res.redirect('/map');
+});
+
+router.get("/test1", (req, res) => {
+  let penaltyPoints = req.flash("points");
+  console.log(penaltyPoints);
 });
 
 router.post('/send', async (req, res) => {
@@ -39,5 +45,6 @@ router.post('/post2', async (req, res) => {
     console.log(e);
   }
 });
+//------------------------------------Test Route-------------------------------------------------
 
 module.exports = router;

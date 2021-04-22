@@ -19,6 +19,10 @@ const QuestionSchema = new mongoose.Schema({
     type: Boolean,
     required: true,
   },
+  isBridge:{
+    type: Boolean,
+    required: true,
+  },
   points: {
     type: Number,
     required: true,

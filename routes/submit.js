@@ -8,7 +8,6 @@ const portalRoute = require("./portal");
 
 
 //-----------------------Recursive route-----------------------------------------------------
-
 router.get("/", async(req,res) => {
   const quesId = 2
   const uname = "Addi"
@@ -29,17 +28,27 @@ router.get("/", async(req,res) => {
 
   nodeInfo.unlockedNodes = [];
   var isChecked=[]
+  player.lockedNode = quesId
+  player.save()
+  console.log(player.lockedNode)
   //let quesId = nodeInfo.currentNode
 
   if (result.answer[0].includes(ans[0])) {
-    const x = nodeInfo.solvedNodes.includes(quesId);
-    if (x) {
+    if (nodeInfo.solvedNodes.includes(quesId)) {
       res.json({
         message: "already solved",
       });
       return;
     }
-    player.score += result.points;
+    if (!nodeInfo.unlockedNode.includes(quesId)) {
+      console.log("not unlocked node");
+      res.redirect("/map");
+    }
+    if(nodeInfo.isBridge === true){
+      player.score += result.points - 10; // assuming points for a bridge question as 10 less than the points for a normal question
+    }else{
+      player.score += result.points;
+    }
     nodeInfo.solvedNodes.push(quesId);
     async function recursion(quesId) {
         //console.log("currentNode "+ quesId);
@@ -109,11 +118,6 @@ router.get("/", async(req,res) => {
     res.json({
       message: nodeInfo.unlockedNodes
     })
-    if(!nodeInfo.currentNode.includes(quesId))
-    {
-      console.log("not unlocked node")
-      res.redirect("/map")
-    }
   }else{
     res.redirect("/map")
   }
