@@ -1,62 +1,47 @@
 const express = require('express');
+
 const app = express();
 const mongoose = require('mongoose');
-const bp = require('body-parser');
-const rateLimit = require("express-rate-limit");
-const cors = require("cors");
-var cron = require("node-cron");
+const rateLimit = require('express-rate-limit');
+const cors = require('cors');
 
 require('dotenv/config');
+require('./utils/resetPenaltyPoints');
 
 app.use(cors());
-app.set("trust proxy", true);
+app.set('trust proxy', true);
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
+const testRoute = require('./routes/testroute');
+const scoreRoute = require('./routes/leaderboard');
+const submitRoute = require('./routes/submit');
+const startingRoute = require('./routes/starting');
+const mapRoute = require('./routes/mapdisplay');
+const penaltyRoute = require('./routes/penalty');
 
 const apiLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
   max: 100,
 });
 
-app.use(bp.urlencoded({ extended: false }));
-app.use(bp.json());
-
-const testRoute = require('./routes/testroute');
 app.use('/test', testRoute);
-
-const scoreRoute = require('./routes/leaderboard');
 app.use('/score', scoreRoute);
-
-const submitRoute = require('./routes/submit');
 app.use('/submit', submitRoute, apiLimiter);
-
-const startingRoute = require("./routes/starting");
-app.use("/starting", startingRoute);
-
-const mapRoute = require("./routes/mapdisplay");
-app.use("/map", mapRoute);
-
-const penaltyRoute = require("./routes/penalty");
-app.use("/penalty", penaltyRoute);
+app.use('/starting', startingRoute);
+app.use('/map', mapRoute);
+app.use('/penalty', penaltyRoute, apiLimiter);
 
 app.get('/', (req, res) => {
   res.send('homepage');
 });
 
-// to update penalty points every 12 hours
-app.get("/counter", (req, res) => {
-  cron.schedule("0 */12 * * *", () => {
-    player.currentPenaltyPoints = 20;
-  });
-  console.log("penalty");
-});
-
-
-  
-//Connection to the database
+// Connection to the database
 mongoose.connect(
   process.env.DB_CONNECTION,
   {
     useNewUrlParser: true,
-	  useCreateIndex: true,
+    useCreateIndex: true,
     useUnifiedTopology: true,
   },
 );

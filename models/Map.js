@@ -19,10 +19,10 @@ const MapSchema = new mongoose.Schema({
       required: true,
     },
   ],
-  lockedNodes:[
+  lockedNodes: [
     {
       type: Number,
-    }
+    },
   ],
   currentNode: [
     {
@@ -34,11 +34,11 @@ const MapSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  portalOpen:[
-  {
-    type: Number,
-  },
-  ]
+  portalOpen: [
+    {
+      type: Number,
+    },
+  ],
 
 });
 const Map = mongoose.model('map', MapSchema);

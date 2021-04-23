@@ -14,12 +14,12 @@ const QuestionSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  
+
   isPortal: {
     type: Boolean,
     required: true,
   },
-  isBridge:{
+  isBridge: {
     type: Boolean,
     required: true,
   },
@@ -27,7 +27,7 @@ const QuestionSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  
+
 });
 
 const Question = mongoose.model('question', QuestionSchema);

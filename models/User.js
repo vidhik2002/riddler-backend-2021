@@ -31,7 +31,7 @@ const UserSchema = new mongoose.Schema({
   lockedNode: {
     type: Number,
     required: true,
-  }
+  },
 });
 const User = mongoose.model('user', UserSchema);
 module.exports = User;
