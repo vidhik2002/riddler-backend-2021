@@ -21,8 +21,8 @@ const mapRoute = require('./routes/mapdisplay');
 const penaltyRoute = require('./routes/penalty');
 
 const apiLimiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100,
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 100,
 });
 
 app.use('/test', testRoute);
@@ -33,36 +33,36 @@ app.use('/map', mapRoute);
 app.use('/penalty', penaltyRoute, apiLimiter);
 
 app.get('/', (req, res) => {
-  res.send('homepage');
+    res.send('homepage');
 });
 
 // Connection to the database
 mongoose.connect(
-  process.env.DB_CONNECTION,
-  {
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useUnifiedTopology: true,
-  },
+    process.env.DB_CONNECTION,
+    {
+        useNewUrlParser: true,
+        useCreateIndex: true,
+        useUnifiedTopology: true,
+    },
 );
 
 mongoose.connection
-  .once('open', () => {
-    console.log('Connection to mongoDB established');
-  })
-  .on('error', (err) => {
-    console.log('Error connecting to mongoDB:', err);
-  });
+    .once('open', () => {
+        console.log('Connection to mongoDB established');
+    })
+    .on('error', (err) => {
+        console.log('Error connecting to mongoDB:', err);
+    });
 
 app.use((error, req, res, next) => {
-  res.status(error.status || 500);
-  res.json({
-    error: ({
-      message: error.message,
-    }),
-  });
+    res.status(error.status || 500);
+    res.json({
+        error: ({
+            message: error.message,
+        }),
+    });
 });
 
 app.listen(3000, () => {
-  console.log('server started');
+    console.log('server started');
 });
