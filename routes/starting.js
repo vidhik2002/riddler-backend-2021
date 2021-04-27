@@ -25,20 +25,28 @@ router.get('/', async (req, res) => {
     }
     const obj = JSON.parse(await readfile('./models/questions.json'));
     const r = obj[quesId.toString()].starting;
-    const o = obj[quesId.toString()].otherPortal;
+    
+    var starting=[37,38,39]
+    if(starting.includes(quesId))
+    {
+        nodeInfo.unlockedNodes.push(quesId)
+    }
+    if(nodeInfo.unlockedNodes.includes(quesId))
+    {
+        if (result.answer[0].includes(ans[0])) {
 
-    if (result.answer[0].includes(ans[0])) {
-        console.log('entered loop');
-        for (let i = 0; i < o.length; i++) {
-            nodeInfo.lockedNodes.push(o[i]);
+            nodeInfo.currentNode = r[0];
+            nodeInfo.startingNode = quesId;
+            player.currentPosition = quesId;
+            player.save();
+            nodeInfo.save();
+        } else {
+            res.redirect('/map');
         }
-        nodeInfo.currentNode = r[0];
-        nodeInfo.startingNode = quesId;
-        player.currentPosition = quesId;
-        player.save();
-        nodeInfo.save();
-    } else {
-        res.redirect('/map');
+    }else{
+        res.json({
+        message: "node not unlocked",
+        });
     }
 });
 
