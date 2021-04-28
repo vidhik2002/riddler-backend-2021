@@ -10,10 +10,10 @@ const QuestionSchema = new mongoose.Schema({
         required: true,
     },
     questionId:
-  {
+   {
       type: Number,
       required: true,
-  },
+   },
 
     isPortal: {
         type: Boolean,

@@ -28,7 +28,7 @@ const apiLimiter = rateLimit({
 app.use('/test', testRoute);
 app.use('/score', scoreRoute);
 app.use('/submit', submitRoute, apiLimiter);
-app.use('/starting', startingRoute);
+app.use('/starting', startingRoute, apiLimiter);
 app.use('/map', mapRoute);
 app.use('/penalty', penaltyRoute, apiLimiter);
 

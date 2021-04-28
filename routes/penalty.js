@@ -4,9 +4,11 @@ const router = express.Router();
 const user = require('../models/User');
 const map = require('../models/Map');
 const question = require('../models/Question');
+const { authPenaltySchema } = require('../utils/validation_schema')
+const validator = require("express-joi-validation").createValidator({});
 
 // ------------------------------Penalty Route----------------------------------------
-router.get('/', async (req, res) => {
+router.get('/',validator.body(authPenaltySchema), async (req, res) => {
     console.log('penalty route');
     const { newquesId } = req.body;
     const { uname } = req.body;
