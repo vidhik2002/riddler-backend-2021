@@ -18,11 +18,11 @@ const UserSchema = new mongoose.Schema({
     score: {
         type: Number,
     },
-    currentPosition: {
-        type: Number,
-        required: true,
-        default: 0,
-    },
+    // currentPosition: {
+    //     type: Number,
+    //     required: true,
+    //     default: 0,
+    // },
     currentPenaltyPoints: {
         type: Number,
         required: true,

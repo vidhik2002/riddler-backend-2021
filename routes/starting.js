@@ -26,27 +26,36 @@ router.get("/", validator.body(authUserSchema), async (req, res) => {
       });
     });
   }
-  const obj = JSON.parse(await readfile("./models/questions.json"));
-  const r = obj[quesId.toString()].starting;
 
-  var starting = [37, 38, 39];
-  if (starting.includes(quesId)) {
-    nodeInfo.unlockedNodes.push(quesId);
-  }
-  if (nodeInfo.unlockedNodes.includes(quesId)) {
-    if (result.answer[0].includes(ans[0])) {
-      nodeInfo.currentNode = r[0];
-      nodeInfo.startingNode = quesId;
-      player.currentPosition = quesId;
-      player.save();
-      nodeInfo.save();
-    } else {
-      res.redirect("/map");
+  if(result && nodeInfo && player){
+    const obj = JSON.parse(await readfile("./models/questions.json"));
+    const r = obj[quesId.toString()].starting;
+    var starting = [37, 38, 39];
+
+    if (starting.includes(quesId)) {
+      nodeInfo.unlockedNodes.push(quesId);
     }
-  } else {
+    if (nodeInfo.unlockedNodes.includes(quesId)) {
+      if (result.answer[0] == (ans[0])) {
+        nodeInfo.currentNode = r[0];
+        nodeInfo.startingNode = quesId;
+        // player.currentPosition = quesId;
+        player.save();
+        nodeInfo.save();
+      } else {
+        res.json({
+          message: "answer not correct",
+        })
+      }
+    } else {
+      res.json({
+        message: "node not unlocked",
+      });
+    }
+  }else{
     res.json({
-      message: "node not unlocked",
-    });
+      message: "values not found",
+    })
   }
 });
 
