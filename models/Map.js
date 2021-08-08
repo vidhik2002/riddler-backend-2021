@@ -34,6 +34,12 @@ const MapSchema = new mongoose.Schema({
             type: Number,
         },
     ],
+    lockedNodes: [
+        {
+            type: Number,
+            required: true,
+        }
+    ],
 
 });
 const Map = mongoose.model('map', MapSchema);
