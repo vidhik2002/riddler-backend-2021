@@ -16,9 +16,9 @@ app.use(express.urlencoded({ extended: false }));
 const testRoute = require('./routes/testroute');
 const scoreRoute = require('./routes/leaderboard');
 const submitRoute = require('./routes/submit');
-const startingRoute = require('./routes/starting');
 const mapRoute = require('./routes/mapdisplay');
 const penaltyRoute = require('./routes/penalty');
+const insertRoute = require('./routes/insert');
 
 const apiLimiter = rateLimit({
     windowMs: 15 * 60 * 1000, // 15 minutes
@@ -28,9 +28,9 @@ const apiLimiter = rateLimit({
 app.use('/test', testRoute);
 app.use('/score', scoreRoute);
 app.use('/submit', submitRoute, apiLimiter);
-app.use('/starting', startingRoute, apiLimiter);
 app.use('/map', mapRoute);
 app.use('/penalty', penaltyRoute, apiLimiter);
+app.use('/insert', insertRoute);
 
 app.get('/', (req, res) => {
     res.send('homepage');

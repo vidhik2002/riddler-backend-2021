@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 const user = require('../models/User');
 const question = require('../models/Question');
-const map = require('../models/Map');
+const map = require('../models/GameState');
 
 // ------------------------------------Test Route--------------------------------------
 router.get('/', (req, res) => {
