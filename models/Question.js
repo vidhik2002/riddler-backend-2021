@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const QuestionSchema = new mongoose.Schema({
     question: {
@@ -25,7 +25,7 @@ const QuestionSchema = new mongoose.Schema({
         type: Number,
         required: true,
     },
-});
+    });
 
-const Question = mongoose.model('question', QuestionSchema);
+const Question = mongoose.model("question", QuestionSchema);
 module.exports = Question;
