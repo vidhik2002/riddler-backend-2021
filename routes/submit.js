@@ -9,14 +9,16 @@ const { authUserSchema } = require("../utils/validation_schema");
 const validator = require("express-joi-validation").createValidator({});
 
 // -----------------------Recursive route-----------------------------------------------------
-router.get('/',validator.body(authUserSchema), async (req, res) => {
-    const { quesId } = req.body;
+router.post('/',validator.body(authUserSchema), async (req, res) => {
+    let { quesId } = req.body;
     const { uname } = req.body; // as a string
     const { ans } = req.body;// as a string in list
     
     const result = await question.findOne({ questionId: quesId });
     const nodeInfo = await map.findOne({ username: uname });
     const player = await user.findOne({ username: uname });
+
+    console.log(quesId)
     
     
     function readfile(fileName) {
@@ -40,7 +42,7 @@ router.get('/',validator.body(authUserSchema), async (req, res) => {
             });
             return;
         }
-        if (!nodeInfo.unlockedNode.includes(quesId)) {
+        if (!nodeInfo.unlockedNodes.includes(quesId)) {
             console.log('not unlocked node');
             res.redirect('/map');
         }
@@ -52,6 +54,7 @@ router.get('/',validator.body(authUserSchema), async (req, res) => {
         nodeInfo.solvedNodes.push(quesId);
         async function recursion(quesId) {
             const obj = JSON.parse(await readfile('./models/questions.json'));
+            console.log(obj)
 
             if (result.isPortal === true) {
                 if (result.answer[0].includes(ans[0]) && result.answer[1].includes(ans[1])) {
@@ -79,7 +82,7 @@ router.get('/',validator.body(authUserSchema), async (req, res) => {
                     console.log('end of portal recursion');
                 }
             }
-
+            console.log(quesId)
             const q = obj[quesId.toString()].adjacent;
 
             for (let i = 0; i < q.length; i++) {
