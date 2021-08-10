@@ -18,20 +18,20 @@ const UserSchema = new mongoose.Schema({
     score: {
         type: Number,
     },
-    currentPosition: {
-        type: Number,
-        required: true,
-        default: 0,
-    },
+    // currentPosition: {
+    //     type: Number,
+    //     required: true,
+    //     default: 0,
+    // },
     currentPenaltyPoints: {
         type: Number,
         required: true,
         default: 20,
     },
-    lockedNode: {
-        type: Number,
-        required: true,
-    },
+    // lockedNode: {
+    //     type: Number,
+    //     required: true,
+    // },
 });
 const User = mongoose.model('user', UserSchema);
 module.exports = User;
