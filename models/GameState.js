@@ -4,6 +4,7 @@ const MapSchema = new mongoose.Schema({
     username: {
         type: String,
         required: true,
+        unique: true,
     },
     // startingNode: [
     //     {

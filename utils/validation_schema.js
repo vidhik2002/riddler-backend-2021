@@ -10,8 +10,13 @@ const authUserSchema = Joi.object().keys({
     ans: Joi.array().items(Joi.string()).min(1).max(2)
         .required(),
 });
+const quesSchema = Joi.object().keys({
+    username: Joi.string().alphanum().min(3).max(30).required(),
+    quesId: Joi.number().integer().required(),
+})
 
 module.exports = {
     authUserSchema,
     authPenaltySchema,
+    quesSchema,
 };

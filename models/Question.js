@@ -12,6 +12,7 @@ const QuestionSchema = new mongoose.Schema({
     questionId: {
         type: Number,
         required: true,
+        unique:true,
     },
     isPortal: {
         type: Boolean,
