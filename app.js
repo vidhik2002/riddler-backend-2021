@@ -20,6 +20,7 @@ const mapRoute = require('./routes/mapdisplay');
 const penaltyRoute = require('./routes/penalty');
 const insertRoute = require('./routes/insert');
 const quesRoute = require('./routes/question');
+const playerdataRoute = require('./routes/playerdata');
 
 const apiLimiter = rateLimit({
     windowMs: 15 * 60 * 1000, // 15 minutes
@@ -33,6 +34,7 @@ app.use('/map', mapRoute);
 app.use('/penalty', penaltyRoute, apiLimiter);
 app.use('/insert', insertRoute);
 app.use('/ques', quesRoute);
+app.use('/playerdata', playerdataRoute);
 
 app.get('/', (req, res) => {
     res.send('homepage');

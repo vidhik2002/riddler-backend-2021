@@ -18,7 +18,7 @@ const QuestionSchema = new mongoose.Schema({
         type: Boolean,
         required: true,
     },
-    isBridge: {
+    isStarting: {
         type: Boolean,
         required: true,
     },
