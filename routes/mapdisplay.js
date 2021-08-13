@@ -1,11 +1,26 @@
 const express = require('express');
 
 const router = express.Router();
+const map = require("../models/GameState");
 
 // ----------------------------Map Route-------------------------------
-router.get('/', async (req, res) => {
-    console.log('map route');
+router.get("/", async (req, res) => {
+  const { username } = req.body;
+
+  try {
+    const nodeInfo = await map.findOne({ username: username });
+
+    res.json({
+      "game-state": nodeInfo,
+    });
+  } catch (e) {
+    res.status(500).json({
+      error: e,
+    });
+  }
 });
-// ----------------------------Map Route-------------------------------
-
 module.exports = router;
+
+
+
+// ----------------------------Map Route-------------------------------
