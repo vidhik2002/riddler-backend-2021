@@ -30,11 +30,6 @@ const QuestionSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    isHint: {
-        type: Boolean,
-        required: true,
-        default: false,
-    },
 });
 
 const Question = mongoose.model("question", QuestionSchema);

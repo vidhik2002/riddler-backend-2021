@@ -20,7 +20,7 @@ router.post("/", validator.body(quesSchema), async (req, res) => {
       res.json({
         question: result.question,
       });
-    } else {
+    } else if(nodeInfo.lockedNode==0){
       if (!starting.includes(quesId)) {
         nodeInfo.lockedNode = quesId;
         nodeInfo.save();
@@ -29,6 +29,11 @@ router.post("/", validator.body(quesSchema), async (req, res) => {
         message: "validated",
         question: result.question,
       });
+    }
+    else {
+      res.json({
+        message: "a question is already locked"
+      })
     }
   }
   else {

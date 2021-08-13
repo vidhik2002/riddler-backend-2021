@@ -8,7 +8,7 @@ const question = require("../models/Question");
 const { authUserSchema } = require("../utils/validation_schema");
 const validator = require("express-joi-validation").createValidator({});
 
-router.get("/", validator.body(authUserSchema), async (req, res) => {
+router.post("/", validator.body(authUserSchema), async (req, res) => {
   const { quesId } = req.body;
   const { username } = req.body; // as a string
   const { answer } = req.body; // as a string in list
@@ -84,31 +84,41 @@ router.get("/", validator.body(authUserSchema), async (req, res) => {
   async function recursion(quesId) {
     const obj = JSON.parse(await readfile("./models/questions.json"));
     const sawal = await question.findOne({ questionId: quesId });
-    if (sawal.isPortal) {
-      const q = obj[quesId.toString()].adjacent;
-      for (let i = 0; i < q.length; i++) {
-        console.log(q[i]);
-        if (checked.includes(q[i])) {
-          console.log(`already checked${q[i]}`);
-        } else if (!nodeInfo.solvedNodes.includes(q[i])) {
-          console.log(`unlocked${q[i]}`);
-          nodeInfo.unlockedNodes.push(q[i]);
-          checked.push(q[i]);
-        } else if (nodeInfo.solvedNodes.includes(q[i])) {
-          console.log(`solved${q[i]}`);
-          checked.push(q[i]);
-          await recursion(q[i]);
-        } else {
-          console.log(`${q[i]}couldnot be processed`);
-        }
+    let q = obj[quesId.toString()].adjacent;
+    if (sawal.isPortal && nodeInfo.portalNodes[quesId.toString()].ans.length === 2) {
+      q.push(obj[quesId.toString()].portal[0])
+      q.push(obj[quesId.toString()].portal[1])
+      console.log(obj[quesId.toString()].portal)
+    }
+    for (let i = 0; i < q.length; i++) {
+      console.log(q[i]);
+      if (checked.includes(q[i])) {
+        console.log(`already checked${q[i]}`);
+      } else if (!nodeInfo.solvedNodes.includes(q[i])) {
+        console.log(`unlocked${q[i]}`);
+        nodeInfo.unlockedNodes.push(q[i]);
+        checked.push(q[i]);
+      } else if (nodeInfo.solvedNodes.includes(q[i])) {
+        console.log(`solved${q[i]}`);
+        checked.push(q[i]);
+        await recursion(q[i]);
+      } else {
+        console.log(`${q[i]}couldnot be processed`);
       }
     }
   }
 
   // if(!nodeInfo.solvedNodes.includes(quesId) || result.isPortal){
 
-  if (quesId === nodeInfo.lockedNode || result.isStarting) {
-    if (answer[0] === result.answer[0]) {
+  if (quesId === nodeInfo.lockedNode || (result.isStarting && nodeInfo.solvedNodes.length === 0)) {
+    if (
+      (nodeInfo.solvedNodes.includes(quesId) && !result.isPortal) ||
+      (result.isPortal && nodeInfo.portalNodes[quesId.toString()].ans.length === 2)
+    ) {
+      res.json({
+        message: "node already solved",
+      });
+    } else if (result.answer.includes(answer[0])) {
       //not starting node 37,38,39
       // if(!result.isStarting){
       //     for (let i = 0; i < p.length; i++) {
@@ -129,12 +139,25 @@ router.get("/", validator.body(authUserSchema), async (req, res) => {
       //     }
       //     console.log(nodeInfo.unlockedNodes);
       // }
-
-      nodeInfo.solvedNodes.push(quesId);
+      if (!nodeInfo.solvedNodes.includes(quesId)) {
+        nodeInfo.solvedNodes.push(quesId);
+      }
+      if (
+        result.isPortal &&
+        !nodeInfo.portalNodes[quesId.toString()].ans.includes(answer[0])
+      ) {
+        nodeInfo.portalNodes[quesId.toString()].ans.push(answer[0]);
+      }
       player.score += result.points; //irrespective of being bridge question or not
-      nodeInfo.save();
+      nodeInfo.unlockedNodes = []
+      nodeInfo.lockedNode=0;
       player.save();
-      recursion(quesId);
+      await recursion(quesId);
+      nodeInfo.save()
+      
+      res.json({
+        message: "answer correct question solved"
+      })
 
       //}
     } else {
@@ -144,7 +167,7 @@ router.get("/", validator.body(authUserSchema), async (req, res) => {
     }
   } else {
     res.json({
-      message: "the current question is not locked",
+      message: "the current question is not frozen",
     });
   }
   // }else{

@@ -6,11 +6,9 @@ const map = require("../models/GameState");
 const ques = require("../models/Question");
 
 router.post("/user", (req, res) => {
-  const { username, email, password } = req.body;
+  const { username } = req.body;
   let userToEnter = new user({
     username: username,
-    email: email,
-    password: password,
     score: 0,
     currentPenaltyPoints: 20,
   });
@@ -35,6 +33,7 @@ router.post("/user", (req, res) => {
     ],
     currentPosition: 0,
     lockedNode: 0,
+    hintQues: [],
   });
 
   stateToEnter.save();
@@ -42,18 +41,29 @@ router.post("/user", (req, res) => {
 });
 
 router.post("/ques", (req, res) => {
-  const { question, answer, questionId, isPortal, isBridge, points } = req.body;
+  const {
+    question,
+    answer,
+    questionId,
+    isPortal,
+    isBridge,
+    isStarting,
+    points,
+    hint,
+  } = req.body;
   let quesToEnter = new ques({
     question: question,
     answer: answer,
     questionId: questionId,
     isPortal: isPortal,
     isBridge: isBridge,
+    isStarting: isStarting,
     points: points,
-  })
+    hint: hint,
+  });
 
-  quesToEnter.save()
-  res.end("ques inserted")
+  quesToEnter.save();
+  res.end("ques inserted");
 });
 
 module.exports = router;
