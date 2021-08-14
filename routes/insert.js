@@ -7,14 +7,23 @@ const ques = require("../models/Question");
 
 router.post("/user", async (req, res) => {
   const { username } = req.participant;
-  const userExists = await User.exists({ username: username });
-  if (userExists) res.json({message: "user exists"});
+  const userExists = await user.exists({ username: username });
+  if (userExists) return res.json({message: "user exists"});
   let userToEnter = new user({
     username: username,
     score: 0,
     currentPenaltyPoints: 20,
   });
-  userToEnter.save();
+  try{
+    userToEnter.save();
+  }
+  catch(e)
+  {
+    res.status(500).json({
+      error:e
+    })
+  }
+  
 
   let stateToEnter = new map({
     username: username,
