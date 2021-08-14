@@ -5,8 +5,10 @@ const user = require("../models/User");
 const map = require("../models/GameState");
 const ques = require("../models/Question");
 
-router.post("/user", (req, res) => {
+router.post("/user", async (req, res) => {
   const { username } = req.body;
+  const userExists = await User.exists({ username: username });
+  if (userExists) res.json({message: "user exists"});
   let userToEnter = new user({
     username: username,
     score: 0,
