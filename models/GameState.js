@@ -50,11 +50,6 @@ const MapSchema = new mongoose.Schema({
       ],
     },
   },
-  currentPosition: {
-    type: Number,
-    required: true,
-  },
-
   lockedNode: {
     type: Number,
     required: true,
