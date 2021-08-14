@@ -4,7 +4,7 @@ const router = express.Router();
 const map = require("../models/GameState");
 
 // ----------------------------Map Route-------------------------------
-router.get("/", async (req, res) => {
+router.post("/", async (req, res) => {
   const { username } = req.body;
 
   try {
