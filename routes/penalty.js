@@ -11,7 +11,7 @@ const validator = require("express-joi-validation").createValidator({});
 router.post("/", validator.body(authPenaltySchema), async (req, res) => {
   console.log("penalty route");
   const { quesId } = req.body;
-  const { username } = req.body;
+  const { username } = req.participant;
   const nodeInfo = await map.findOne({ username: username });
   const player = await user.findOne({ username: username });
 

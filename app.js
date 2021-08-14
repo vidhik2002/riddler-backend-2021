@@ -12,6 +12,7 @@ app.use(cors());
 app.set('trust proxy', true);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+const authMiddleware = require('./middleware/authorize')
 
 const testRoute = require('./routes/testroute');
 const scoreRoute = require('./routes/leaderboard');
@@ -23,6 +24,7 @@ const quesRoute = require('./routes/question');
 const playerdataRoute = require('./routes/playerdata');
 const hintRoute = require('./routes/hint');
 
+
 const apiLimiter = rateLimit({
     windowMs: 15 * 60 * 1000, // 15 minutes
     max: 100,
@@ -30,13 +32,13 @@ const apiLimiter = rateLimit({
 
 app.use('/test', testRoute);
 app.use('/score', scoreRoute);
-app.use('/submit', submitRoute, apiLimiter);
-app.use('/map', mapRoute);
-app.use('/penalty', penaltyRoute, apiLimiter);
-app.use('/insert', insertRoute);
-app.use('/ques', quesRoute);
-app.use('/playerdata', playerdataRoute);
-app.use('/hint', hintRoute);
+app.use('/submit',authMiddleware, submitRoute, apiLimiter);
+app.use('/map', authMiddleware, mapRoute);
+app.use('/penalty',authMiddleware, penaltyRoute, apiLimiter);
+app.use('/insert',authMiddleware , insertRoute);
+app.use('/ques',authMiddleware , quesRoute);
+app.use('/playerdata',authMiddleware , playerdataRoute);
+app.use('/hint',authMiddleware , hintRoute);
 
 app.get('/', (req, res) => {
     res.send('homepage');

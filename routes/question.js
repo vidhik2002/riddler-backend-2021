@@ -10,7 +10,7 @@ const validator = require("express-joi-validation").createValidator({});
 router.post("/", validator.body(quesSchema), async (req, res) => {
   console.log("question route");
   const { quesId } = req.body;
-  const { username } = req.body;
+  const { username } = req.participant;
   const nodeInfo = await map.findOne({ username: username });
   const result = await question.findOne({ questionId: quesId });
   const starting = [37, 38, 39];

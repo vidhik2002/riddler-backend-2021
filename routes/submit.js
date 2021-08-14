@@ -10,7 +10,7 @@ const validator = require("express-joi-validation").createValidator({});
 
 router.post("/", validator.body(authUserSchema), async (req, res) => {
   const { quesId } = req.body;
-  const { username } = req.body; // as a string
+  const { username } = req.participant;
   const { answer } = req.body; // as a string in list
 
   const result = await question.findOne({ questionId: quesId });

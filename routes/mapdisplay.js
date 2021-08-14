@@ -6,8 +6,8 @@ const map = require("../models/GameState");
 
 // ----------------------------Map Route-------------------------------
 router.post("/", async (req, res) => {
-  const { username } = req.body;
-
+  const { username } = req.participant;
+ 
   try {
     const nodeInfo = await map.findOne({ username: username });
     const portalNodes = {

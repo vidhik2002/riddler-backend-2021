@@ -6,7 +6,7 @@ const map = require("../models/GameState");
 const ques = require("../models/Question");
 
 router.get("/",async (req, res) => {
-    const { username } = req.body;
+  const { username } = req.participant;
     
     try {
         const player = await user.findOne({ username: username });
