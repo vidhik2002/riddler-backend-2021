@@ -10,7 +10,7 @@ const validator = require("express-joi-validation").createValidator({});
 // ------------------------------Penalty Route----------------------------------------
 router.post("/", async (req, res) => {
   const { quesId } = req.body;
-    const { username } = req.participant;
+  const { username } = req.participant;
 
   const nodeInfo = await map.findOne({ username: username });
   const player = await user.findOne({ username: username });
@@ -32,13 +32,13 @@ router.post("/", async (req, res) => {
         });
       } else {
         res.json({
-          message: "not enough points",
+          code: "L2",
         });
       }
     }
   } else {
     res.json({
-      message: "current node not locked",
+      code: "L3",
     });
   }
 });

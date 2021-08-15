@@ -32,14 +32,14 @@ router.post("/", validator.body(quesSchema), async (req, res) => {
     }
     else {
       res.json({
-        message: "a question is already locked"
-      })
+        code: "L5",
+      });
     }
   }
   else {
       res.json({
-          message:"ques not unlocked",
-      })
+        code: "L6",
+      });
   }
 });
 
