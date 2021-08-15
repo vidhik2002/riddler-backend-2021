@@ -2,8 +2,16 @@ const mongoose = require("mongoose");
 
 const QuestionSchema = new mongoose.Schema({
     question: {
-        type: String,
-        required: true,
+        text: {
+            type: String,
+            required: true,
+        },
+        img: [{
+            type: String,
+        }],
+        links: [{
+            type: String,
+        }],
     },
     answer: {
         type: [String],
@@ -27,8 +35,16 @@ const QuestionSchema = new mongoose.Schema({
         required: true,
     },
     hint: {
-        type: String,
-        required: true,
+        text: {
+            type: String,
+            required: true,
+        },
+        img: [{
+            type: String,
+        }],
+        links: [{
+            type: String,
+        }],
     },
 });
 
