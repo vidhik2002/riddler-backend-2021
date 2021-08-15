@@ -4,11 +4,11 @@ const router = express.Router();
 const user = require("../models/User");
 const map = require("../models/GameState");
 const question = require("../models/Question");
-const { authPenaltySchema } = require("../utils/validation_schema");
+const { quesSchema } = require("../utils/validation_schema");
 const validator = require("express-joi-validation").createValidator({});
 
 // ------------------------------Penalty Route----------------------------------------
-router.post("/", async (req, res) => {
+router.post("/",validator.body(quesSchema), async (req, res) => {
   const { quesId } = req.body;
   const { username } = req.participant;
 
@@ -28,7 +28,7 @@ router.post("/", async (req, res) => {
         player.save();
         nodeInfo.save();
         res.json({
-          hint: result.hint,
+          code: "S4"
         });
       } else {
         res.json({

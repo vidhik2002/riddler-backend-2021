@@ -19,15 +19,17 @@ router.post("/", validator.body(quesSchema), async (req, res) => {
     if (quesId === nodeInfo.lockedNode && nodeInfo.lockedNode !== 0) {
       res.json({
         question: result.question,
+        hint: nodeInfo.hintQues.includes(quesId) ? result.hint : {}
       });
     } else if(nodeInfo.lockedNode==0){
-      if (!starting.includes(quesId)) {
+      if (!(starting.includes(quesId) && nodeInfo.solvedNodes.length === 0) && !nodeInfo.solvedNodes.includes(quesId)) {
         nodeInfo.lockedNode = quesId;
         nodeInfo.save();
       }
       res.json({
         code: "S1",
         question: result.question,
+        hint: nodeInfo.hintQues.includes(quesId) ? result.hint : {}
       });
     }
     else {
@@ -36,10 +38,15 @@ router.post("/", validator.body(quesSchema), async (req, res) => {
       });
     }
   }
-  else {
+  else if (nodeInfo.solvedNodes.includes(quesId)) {
       res.json({
-        code: "L6",
+        code: "L7",
       });
+  }
+  else {
+    res.json({
+      code: "L6",
+    });
   }
 });
 

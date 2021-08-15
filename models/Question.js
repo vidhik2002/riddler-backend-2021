@@ -46,6 +46,10 @@ const QuestionSchema = new mongoose.Schema({
             type: String,
         }],
     },
+    track: [{
+        type: Number,
+        required: true,
+    }],
 });
 
 const Question = mongoose.model("question", QuestionSchema);

@@ -32,10 +32,17 @@ router.post("/", validator.body(authUserSchema), async (req, res) => {
     const obj = JSON.parse(await readfile("./models/questions.json"));
     const sawal = await question.findOne({ questionId: quesId });
     let q = obj[quesId.toString()].adjacent;
-    if (sawal.isPortal && nodeInfo.portalNodes[quesId.toString()].ans.length === 2) {
-      q.push(obj[quesId.toString()].portal[0])
-      q.push(obj[quesId.toString()].portal[1])
-      console.log(obj[quesId.toString()].portal)
+    if (sawal.isPortal) {
+      if (nodeInfo.portalNodes[quesId.toString()].ans.length === 2) {
+        q.push(obj[quesId.toString()].portal[0]);
+        q.push(obj[quesId.toString()].portal[1]);
+        console.log(obj[quesId.toString()].portal);
+      } else if (
+        nodeInfo.portalNodes[quesId.toString()].ans.length === 1 &&
+        !nodeInfo.unlockedNodes.includes(quesId)
+      ) {
+        nodeInfo.unlockedNodes.push(quesId);
+      }
     }
     for (let i = 0; i < q.length; i++) {
       console.log(q[i]);
@@ -55,16 +62,21 @@ router.post("/", validator.body(authUserSchema), async (req, res) => {
     }
   }
 
-  if (quesId === nodeInfo.lockedNode || (result.isStarting && nodeInfo.solvedNodes.length === 0)) {
+  if (
+    quesId === nodeInfo.lockedNode ||
+    (result.isStarting && nodeInfo.solvedNodes.length === 0) ||
+    nodeInfo.solvedNodes.includes(quesId)
+  ) {
     if (
       (nodeInfo.solvedNodes.includes(quesId) && !result.isPortal) ||
-      (result.isPortal && nodeInfo.portalNodes[quesId.toString()].ans.length === 2)
+      (result.isPortal &&
+        (nodeInfo.portalNodes[quesId.toString()].ans.length === 2 ||
+          nodeInfo.portalNodes[quesId.toString()].ans.includes(answer[0])))
     ) {
       res.json({
         code: "L7",
       });
     } else if (result.answer.includes(answer[0])) {
-      
       if (!nodeInfo.solvedNodes.includes(quesId)) {
         nodeInfo.solvedNodes.push(quesId);
       }
@@ -75,16 +87,22 @@ router.post("/", validator.body(authUserSchema), async (req, res) => {
         nodeInfo.portalNodes[quesId.toString()].ans.push(answer[0]);
       }
       player.score += result.points; //irrespective of being bridge question or not
-      nodeInfo.unlockedNodes = []
-      nodeInfo.lockedNode=0;
+      nodeInfo.unlockedNodes = [];
+      if (
+        !(
+          result.isPortal &&
+          nodeInfo.portalNodes[quesId.toString()].ans.length === 2
+        )
+      ) {
+        nodeInfo.lockedNode = 0;
+      }
       player.save();
       await recursion(quesId);
-      nodeInfo.save()
-      
+      nodeInfo.save();
+
       res.json({
         code: "S2",
       });
-
     } else {
       res.json({
         code: "L8",
