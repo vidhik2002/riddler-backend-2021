@@ -26,7 +26,7 @@ router.post("/", validator.body(quesSchema), async (req, res) => {
         nodeInfo.save();
       }
       res.json({
-        message: "validated",
+        code: "S1",
         question: result.question,
       });
     }
