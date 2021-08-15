@@ -61,7 +61,7 @@ router.post("/", validator.body(authUserSchema), async (req, res) => {
       (result.isPortal && nodeInfo.portalNodes[quesId.toString()].ans.length === 2)
     ) {
       res.json({
-        message: "node already solved",
+        code: "L7",
       });
     } else if (result.answer.includes(answer[0])) {
       
@@ -82,17 +82,17 @@ router.post("/", validator.body(authUserSchema), async (req, res) => {
       nodeInfo.save()
       
       res.json({
-        message: "answer correct question solved"
-      })
+        code: "S2",
+      });
 
     } else {
       res.json({
-        message: "answer not correct",
+        code: "L8",
       });
     }
   } else {
     res.json({
-      message: "the current question is not frozen",
+      code: "L3",
     });
   }
 });
