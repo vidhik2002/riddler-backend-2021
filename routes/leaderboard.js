@@ -3,6 +3,7 @@ const express = require("express");
 const router = express.Router();
 const user = require("../models/User");
 const { logger } = require("../logs/logger");
+const { error_codes, success_codes } = require("../tools/error_codes");
 
 router.get("/all", async (req, res, next) => {
   try {
@@ -12,12 +13,14 @@ router.get("/all", async (req, res, next) => {
       username,
       score,
     }));
-    res.status(200).json(responseJSON);
+    logger.notice(success_codes.S1);
+    return res.status(200).json(responseJSON);
   } catch (e) {
-    res.status(500).json({
+    logger.error(error_codes.E0);
+    return res.status(500).json({
       error: e,
+      code: "E0",
     });
-    logger.error(`${e}`);
   }
 });
 

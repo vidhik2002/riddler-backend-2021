@@ -31,14 +31,14 @@ const apiLimiter = rateLimit({
 });
 
 app.use('/test', testRoute);
-app.use('/score', scoreRoute);
-app.use('/submit',authMiddleware, submitRoute, apiLimiter);
-app.use('/map', authMiddleware, mapRoute);
-app.use('/penalty',authMiddleware, penaltyRoute, apiLimiter);
-app.use('/insert',authMiddleware , insertRoute);
-app.use('/ques',authMiddleware , quesRoute);
-app.use('/playerdata',authMiddleware , playerdataRoute);
-app.use('/hint',authMiddleware , hintRoute);
+app.use('/score', apiLimiter, scoreRoute);
+app.use('/submit',authMiddleware, apiLimiter, submitRoute);
+app.use('/map', authMiddleware, apiLimiter, mapRoute);
+app.use('/penalty',authMiddleware, apiLimiter, penaltyRoute);
+app.use('/insert',authMiddleware , apiLimiter, insertRoute);
+app.use('/ques',authMiddleware , apiLimiter, quesRoute);
+app.use('/playerdata',authMiddleware , apiLimiter, playerdataRoute);
+app.use('/hint',authMiddleware , apiLimiter, hintRoute);
 
 app.get('/', (req, res) => {
     res.send('homepage');

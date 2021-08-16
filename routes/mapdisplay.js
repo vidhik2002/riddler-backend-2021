@@ -1,8 +1,9 @@
-const express = require('express');
+const express = require("express");
 
 const router = express.Router();
 const map = require("../models/GameState");
 const { logger } = require("../logs/logger");
+const { error_codes, success_codes } = require("../tools/error_codes");
 //lockedNode, portalNodes, solvedNodes, unlockedNodes, username
 
 // ----------------------------Map Route-------------------------------
@@ -10,28 +11,37 @@ router.post("/", async (req, res) => {
   try {
     const { username } = req.participant;
     const nodeInfo = await map.findOne({ username: username });
+
+    if (!nodeInfo) {
+      logger.error(error_codes.E3);
+      return res.json({
+        code: "E3",
+      });
+    }
+
     const portalNodes = {
-      "9": nodeInfo.portalNodes["9"].ans.length == 2,
-      "20": nodeInfo.portalNodes["20"].ans.length == 2,
-      "32": nodeInfo.portalNodes["32"].ans.length == 2
-    }
-    res.json({
-      "username": nodeInfo.username,
-      "portalNodes": portalNodes,
-      "solvedNodes": nodeInfo.solvedNodes,
-      "unlockedNodes": nodeInfo.unlockedNodes,
-      "lockedNode": nodeInfo.lockedNode,
-    }
-    );
+      9: nodeInfo.portalNodes["9"].ans.length == 2,
+      20: nodeInfo.portalNodes["20"].ans.length == 2,
+      32: nodeInfo.portalNodes["32"].ans.length == 2,
+    };
+
+    logger.notice(success_codes.S1);
+    return res.json({
+      username: nodeInfo.username,
+      portalNodes: portalNodes,
+      solvedNodes: nodeInfo.solvedNodes,
+      unlockedNodes: nodeInfo.unlockedNodes,
+      lockedNode: nodeInfo.lockedNode,
+      code: "S1",
+    });
   } catch (e) {
-    res.status(500).json({
+    logger.error(error_codes.E0);
+    return res.status(500).json({
+      code: "E0",
       error: e,
     });
-    logger.error(`${e}`);
   }
 });
 module.exports = router;
-
-
 
 // ----------------------------Map Route-------------------------------

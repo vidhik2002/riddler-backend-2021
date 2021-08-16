@@ -6,6 +6,7 @@ const decodeJWT = (req, res, next) => {
 
   if (!token) {
     res.status(401).json({
+      code:"E2",
       success: false,
       message: constants.invalidJWT,
     });
@@ -18,6 +19,7 @@ const decodeJWT = (req, res, next) => {
     next();
   } catch (err) {
     res.status(400).json({
+      code:"E2",
       success: false,
       message: constants.invalidJWT,
     });

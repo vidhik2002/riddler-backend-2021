@@ -8,86 +8,98 @@ const question = require("../models/Question");
 const { authUserSchema } = require("../utils/validation_schema");
 const validator = require("express-joi-validation").createValidator({});
 const { logger } = require("../logs/logger");
+const {
+  error_codes,
+  logical_errors,
+  success_codes,
+} = require("../tools/error_codes");
 
 router.post("/", validator.body(authUserSchema), async (req, res) => {
-  const { quesId } = req.body;
-  const { username } = req.participant;
-  const { answer } = req.body; // as a string in list
+  try {
+    const { quesId } = req.body;
+    const { username } = req.participant;
+    const { answer } = req.body; // as a string in list
 
-  const result = await question.findOne({ questionId: quesId });
-  const nodeInfo = await map.findOne({ username: username });
-  const player = await user.findOne({ username: username });
+    const result = await question.findOne({ questionId: quesId });
+    const nodeInfo = await map.findOne({ username: username });
+    const player = await user.findOne({ username: username });
 
-  function readfile(fileName) {
-    return new Promise((resolve, reject) => {
-      fs.readFile(fileName, "utf8", (err, data) => {
-        if (err) reject(err);
-        else resolve(data);
-      });
-    });
-  }
-
-  let checked = [];
-
-  async function recursion(quesId) {
-    const obj = JSON.parse(await readfile("./models/questions.json"));
-    const sawal = await question.findOne({ questionId: quesId });
-    let q = obj[quesId.toString()].adjacent;
-    if (sawal.isPortal) {
-      if (nodeInfo.portalNodes[quesId.toString()].ans.length === 2) {
-        q.push(obj[quesId.toString()].portal[0]);
-        q.push(obj[quesId.toString()].portal[1]);
-        console.log(obj[quesId.toString()].portal);
-      } else if (
-        nodeInfo.portalNodes[quesId.toString()].ans.length === 1 &&
-        !nodeInfo.unlockedNodes.includes(quesId)
-      ) {
-        nodeInfo.unlockedNodes.push(quesId);
-      }
+    if (!result || !nodeInfo || !player) {
+      logger.error(error_codes.E3)
+      return res.json({
+        code: "E3"
+      })
     }
-    for (let i = 0; i < q.length; i++) {
-      console.log(q[i]);
-      if (checked.includes(q[i])) {
-        console.log(`already checked${q[i]}`);
-      } else if (!nodeInfo.solvedNodes.includes(q[i])) {
-        console.log(`unlocked${q[i]}`);
-        nodeInfo.unlockedNodes.push(q[i]);
-        checked.push(q[i]);
-      } else if (nodeInfo.solvedNodes.includes(q[i])) {
-        console.log(`solved${q[i]}`);
-        checked.push(q[i]);
-        await recursion(q[i]);
-      } else {
-        console.log(`${q[i]}couldnot be processed`);
-      }
-    }
-  }
 
-  if (
-    quesId === nodeInfo.lockedNode ||
-    (result.isStarting && nodeInfo.solvedNodes.length === 0) ||
-    nodeInfo.solvedNodes.includes(quesId)
-  ) {
-    if (
-      (nodeInfo.solvedNodes.includes(quesId) && !result.isPortal) ||
-      (result.isPortal &&
-        (nodeInfo.portalNodes[quesId.toString()].ans.length === 2 ||
-          nodeInfo.portalNodes[quesId.toString()].ans.includes(answer[0])))
-    ) {
-      res.json({
-        code: "L7",
+    function readfile(fileName) {
+      return new Promise((resolve, reject) => {
+        fs.readFile(fileName, "utf8", (err, data) => {
+          if (err) reject(err);
+          else resolve(data);
+        });
       });
-      logger.error("requested question is already solved");
-      
-    } else if (result.answer.includes(answer[0])) {
-      if (!nodeInfo.solvedNodes.includes(quesId)) {
-        nodeInfo.solvedNodes.push(quesId);
-      }
-      if (
-        result.isPortal &&
-        !nodeInfo.portalNodes[quesId.toString()].ans.includes(answer[0])
+    }
+
+    let checked = [];
+
+    async function recursion(quesId) {
+      const obj = JSON.parse(await readfile("./models/questions.json"));
+      const sawal = await question.findOne({ questionId: quesId });
+      let q = obj[quesId.toString()].adjacent;
+      if (sawal.isPortal) {
+        if (nodeInfo.portalNodes[quesId.toString()].ans.length === 2) {
+          q.push(obj[quesId.toString()].portal[0]);
+          q.push(obj[quesId.toString()].portal[1]);
+          logger.log(obj[quesId.toString()].portal);
+        } else if (
+          nodeInfo.portalNodes[quesId.toString()].ans.length === 1 &&
+          !nodeInfo.unlockedNodes.includes(quesId)
         ) {
-          nodeInfo.portalNodes[quesId.toString()].ans.push(answer[0]);
+          nodeInfo.unlockedNodes.push(quesId);
+        }
+      }
+      for (let i = 0; i < q.length; i++) {
+        logger.log(q[i]);
+        if (checked.includes(q[i])) {
+          logger.info(`already checked${q[i]}`);
+        } else if (!nodeInfo.solvedNodes.includes(q[i])) {
+          logger.log(`unlocked${q[i]}`);
+          nodeInfo.unlockedNodes.push(q[i]);
+          checked.push(q[i]);
+        } else if (nodeInfo.solvedNodes.includes(q[i])) {
+          logger.log(`solved${q[i]}`);
+          checked.push(q[i]);
+          await recursion(q[i]);
+        } else {
+          logger.log(`${q[i]}couldnot be processed`);
+        }
+      }
+    }
+
+    if (
+      quesId === nodeInfo.lockedNode ||
+      (result.isStarting && nodeInfo.solvedNodes.length === 0) ||
+      nodeInfo.solvedNodes.includes(quesId)
+    ) {
+      if (
+        (nodeInfo.solvedNodes.includes(quesId) && !result.isPortal) ||
+        (result.isPortal &&
+          (nodeInfo.portalNodes[quesId.toString()].ans.length === 2 ||
+            nodeInfo.portalNodes[quesId.toString()].ans.includes(answer)))
+      ) {
+        logger.error(logical_errors.L7);
+        return res.json({
+          code: "L7",
+        });
+      } else if (result.answer.includes(answer)) {
+        if (!nodeInfo.solvedNodes.includes(quesId)) {
+          nodeInfo.solvedNodes.push(quesId);
+        }
+        if (
+          result.isPortal &&
+          !nodeInfo.portalNodes[quesId.toString()].ans.includes(answer)
+        ) {
+          nodeInfo.portalNodes[quesId.toString()].ans.push(answer);
         }
         player.score += result.points; //irrespective of being bridge question or not
         nodeInfo.unlockedNodes = [];
@@ -95,29 +107,45 @@ router.post("/", validator.body(authUserSchema), async (req, res) => {
           !(
             result.isPortal &&
             nodeInfo.portalNodes[quesId.toString()].ans.length === 2
-            )
-          ) {
-            nodeInfo.lockedNode = 0;
+          )
+        ) {
+          nodeInfo.lockedNode = 0;
+        }
+        player.save();
+        await recursion(quesId);
+        if (nodeInfo.unlockedNodes.length === 0) {
+          if (!nodeInfo.solvedNodes.includes(40)) {
+            nodeInfo.unlockedNodes.push(40);
+          } else {
+            logger.notice(success_codes.S0);
+            return res.json({
+              code: "S0",
+            });
           }
-          player.save();
-          await recursion(quesId);
-          nodeInfo.save();
-            
-          res.json({
-            code: "S2",
-          });
-          logger.error("answer correct");       
+        }
+        nodeInfo.save();
+        logger.notice(success_codes.S2);
+        return res.json({
+          code: "S2",
+        });
+      } else {
+        logger.error(logical_errors.L8);
+        return res.json({
+          code: "L8",
+        });
+      }
     } else {
-      res.json({
-        code: "L8",
+      logger.error(logical_errors.L3);
+      return res.json({
+        code: "L3",
       });
-      logger.error("incorrect answer for requested question");
     }
-  } else {
-    res.json({
-      code: "L3",
+  } catch (e) {
+    logger.error(error_codes.E0);
+    return res.status(500).json({
+      code: "E0",
+      error: e,
     });
-    logger.error("requested question is already solved");
   }
 });
 module.exports = router;

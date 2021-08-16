@@ -6,55 +6,77 @@ const question = require("../models/Question");
 const { quesSchema } = require("../utils/validation_schema");
 const validator = require("express-joi-validation").createValidator({});
 const { logger } = require("../logs/logger");
+const {
+  error_codes,
+  logical_errors,
+  success_codes,
+} = require("../tools/error_codes");
 
 // ------------------------------Penalty Route----------------------------------------
 router.post("/", validator.body(quesSchema), async (req, res) => {
-  console.log("question route");
-  const { quesId } = req.body;
-  const { username } = req.participant;
-  const nodeInfo = await map.findOne({ username: username });
-  const result = await question.findOne({ questionId: quesId });
-  const starting = [37, 38, 39];
+  try {
+    console.log("question route");
+    const { quesId } = req.body;
+    const { username } = req.participant;
+    const nodeInfo = await map.findOne({ username: username });
+    const result = await question.findOne({ questionId: quesId });
+    const starting = [37, 38, 39];
 
-  if (nodeInfo.unlockedNodes.includes(quesId)) {
-    if (quesId === nodeInfo.lockedNode && nodeInfo.lockedNode !== 0) {
-      res.json({
-        question: result.question,
-        hint: nodeInfo.hintQues.includes(quesId) ? result.hint : {},
-        track: result.track,
+    if (!result || !nodeInfo) {
+      logger.error(error_codes.E3);
+      return res.json({
+        code: "E3",
       });
-    } else if(nodeInfo.lockedNode==0){
-      if (!(starting.includes(quesId) && nodeInfo.solvedNodes.length === 0) && !nodeInfo.solvedNodes.includes(quesId)) {
-        nodeInfo.lockedNode = quesId;
-        nodeInfo.save();
+    }
+
+    if (nodeInfo.unlockedNodes.includes(quesId)) {
+      if (quesId === nodeInfo.lockedNode && nodeInfo.lockedNode !== 0) {
+        return res.json({
+          question: result.question,
+          hint: nodeInfo.hintQues.includes(quesId) ? result.hint : {},
+          track: result.track,
+          points: result.points,
+        });
+      } else if (nodeInfo.lockedNode == 0) {
+        if (
+          !(starting.includes(quesId) && nodeInfo.solvedNodes.length === 0) &&
+          !nodeInfo.solvedNodes.includes(quesId)
+        ) {
+          nodeInfo.lockedNode = quesId;
+          nodeInfo.save();
+        }
+        logger.notice(success_codes.S7);
+        return res.json({
+          code: "S7",
+          question: result.question,
+          hint: nodeInfo.hintQues.includes(quesId) ? result.hint : {},
+          track: result.track,
+          points: result.points,
+        });
+      } else {
+        logger.error(logical_errors.L5);
+        return res.json({
+          code: "L5",
+        });
       }
-      res.json({
-        code: "S1",
-        question: result.question,
-        hint: nodeInfo.hintQues.includes(quesId) ? result.hint : {},
-        track: result.track,
+    } else if (nodeInfo.solvedNodes.includes(quesId)) {
+      logger.error(logical_errors.L7);
+      return res.json({
+        code: "L7",
       });
-      logger.error("validated correctly");
-    }
-    else {
-      res.json({
-        code: "L5",
+    } else {
+      logger.error(logical_errors.L6);
+      return res.json({
+        code: "L6",
       });
-      logger.error("another question already locked");
     }
-  }
-  else if (nodeInfo.solvedNodes.includes(quesId)) {
-    res.json({
-      code: "L7",
+  } catch (e) {
+    logger.error(error_codes.E0);
+    return res.status(500).json({
+      code: "E0",
+      error: e,
     });
-    logger.error("requested node is already locked");
-  }
-  else {
-    res.json({
-      code: "L6",
-    });
-    logger.error("requested node is not unlocked");
   }
 });
 
-module.exports = router
+module.exports = router;
