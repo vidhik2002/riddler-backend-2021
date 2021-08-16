@@ -7,11 +7,12 @@ const ques = require("../models/Question");
 
 router.get("/",async (req, res) => {
   try {
-      const { username } = req.participant;
+      // const { username } = req.participant;
+      const { username } = req.body;
         const player = await user.findOne({ username: username });
-        res.json({
-            "player": player
-        })
+        res.json(
+          player
+        )
     } catch (e) {
       res.status(500).json({
         error: e,
