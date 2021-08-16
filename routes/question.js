@@ -5,6 +5,7 @@ const map = require("../models/GameState");
 const question = require("../models/Question");
 const { quesSchema } = require("../utils/validation_schema");
 const validator = require("express-joi-validation").createValidator({});
+const { logger } = require("../logs/logger");
 
 // ------------------------------Penalty Route----------------------------------------
 router.post("/", validator.body(quesSchema), async (req, res) => {
@@ -33,22 +34,26 @@ router.post("/", validator.body(quesSchema), async (req, res) => {
         hint: nodeInfo.hintQues.includes(quesId) ? result.hint : {},
         track: result.track,
       });
+      logger.error("validated correctly");
     }
     else {
       res.json({
         code: "L5",
       });
+      logger.error("another question already locked");
     }
   }
   else if (nodeInfo.solvedNodes.includes(quesId)) {
-      res.json({
-        code: "L7",
-      });
+    res.json({
+      code: "L7",
+    });
+    logger.error("requested node is already locked");
   }
   else {
     res.json({
       code: "L6",
     });
+    logger.error("requested node is not unlocked");
   }
 });
 

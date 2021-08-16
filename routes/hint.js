@@ -6,6 +6,7 @@ const map = require("../models/GameState");
 const question = require("../models/Question");
 const { quesSchema } = require("../utils/validation_schema");
 const validator = require("express-joi-validation").createValidator({});
+const { logger } = require("../logs/logger");
 
 // ------------------------------Penalty Route----------------------------------------
 router.post("/",validator.body(quesSchema), async (req, res) => {
@@ -30,16 +31,19 @@ router.post("/",validator.body(quesSchema), async (req, res) => {
         res.json({
           code: "S4"
         });
+        logger.error("hint given for requested question");
       } else {
         res.json({
           code: "L2",
         });
+        logger.error("not enough points");
       }
     }
   } else {
     res.json({
       code: "L3",
     });
+    logger.error("requested node is not unlocked");
   }
 });
 module.exports = router;

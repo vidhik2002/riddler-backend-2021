@@ -2,6 +2,7 @@ const express = require("express");
 
 const router = express.Router();
 const user = require("../models/User");
+const { logger } = require("../logs/logger");
 
 router.get("/all", async (req, res, next) => {
   try {
@@ -16,6 +17,7 @@ router.get("/all", async (req, res, next) => {
     res.status(500).json({
       error: e,
     });
+    logger.error(`${e}`);
   }
 });
 

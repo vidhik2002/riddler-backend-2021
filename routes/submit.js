@@ -7,6 +7,7 @@ const map = require("../models/GameState");
 const question = require("../models/Question");
 const { authUserSchema } = require("../utils/validation_schema");
 const validator = require("express-joi-validation").createValidator({});
+const { logger } = require("../logs/logger");
 
 router.post("/", validator.body(authUserSchema), async (req, res) => {
   const { quesId } = req.body;
@@ -76,6 +77,8 @@ router.post("/", validator.body(authUserSchema), async (req, res) => {
       res.json({
         code: "L7",
       });
+      logger.error("requested question is already solved");
+      
     } else if (result.answer.includes(answer[0])) {
       if (!nodeInfo.solvedNodes.includes(quesId)) {
         nodeInfo.solvedNodes.push(quesId);
@@ -83,35 +86,38 @@ router.post("/", validator.body(authUserSchema), async (req, res) => {
       if (
         result.isPortal &&
         !nodeInfo.portalNodes[quesId.toString()].ans.includes(answer[0])
-      ) {
-        nodeInfo.portalNodes[quesId.toString()].ans.push(answer[0]);
-      }
-      player.score += result.points; //irrespective of being bridge question or not
-      nodeInfo.unlockedNodes = [];
-      if (
-        !(
-          result.isPortal &&
-          nodeInfo.portalNodes[quesId.toString()].ans.length === 2
-        )
-      ) {
-        nodeInfo.lockedNode = 0;
-      }
-      player.save();
-      await recursion(quesId);
-      nodeInfo.save();
-
-      res.json({
-        code: "S2",
-      });
+        ) {
+          nodeInfo.portalNodes[quesId.toString()].ans.push(answer[0]);
+        }
+        player.score += result.points; //irrespective of being bridge question or not
+        nodeInfo.unlockedNodes = [];
+        if (
+          !(
+            result.isPortal &&
+            nodeInfo.portalNodes[quesId.toString()].ans.length === 2
+            )
+          ) {
+            nodeInfo.lockedNode = 0;
+          }
+          player.save();
+          await recursion(quesId);
+          nodeInfo.save();
+            
+          res.json({
+            code: "S2",
+          });
+          logger.error("answer correct");       
     } else {
       res.json({
         code: "L8",
       });
+      logger.error("incorrect answer for requested question");
     }
   } else {
     res.json({
       code: "L3",
     });
+    logger.error("requested question is already solved");
   }
 });
 module.exports = router;

@@ -2,6 +2,7 @@ const express = require('express');
 
 const router = express.Router();
 const map = require("../models/GameState");
+const { logger } = require("../logs/logger");
 //lockedNode, portalNodes, solvedNodes, unlockedNodes, username
 
 // ----------------------------Map Route-------------------------------
@@ -26,6 +27,7 @@ router.post("/", async (req, res) => {
     res.status(500).json({
       error: e,
     });
+    logger.error(`${e}`);
   }
 });
 module.exports = router;
