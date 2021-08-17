@@ -25,7 +25,7 @@ router.post("/", async (req, res) => {
       32: nodeInfo.portalNodes["32"].ans.length == 2,
     };
 
-    logger.notice(success_codes.S1);
+    logger.warn(success_codes.S1);
     return res.json({
       username: nodeInfo.username,
       portalNodes: portalNodes,

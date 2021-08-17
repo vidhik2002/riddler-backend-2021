@@ -30,7 +30,7 @@ router.post("/", validator.body(quesSchema), async (req, res) => {
 
     if (quesId === nodeInfo.lockedNode) {
       if (nodeInfo.hintQues.includes(quesId)) {
-        logger.notice(logical_errors.L9);
+        logger.warn(logical_errors.L9);
         return res.json({
           code: "L9"
         });
@@ -40,7 +40,7 @@ router.post("/", validator.body(quesSchema), async (req, res) => {
           nodeInfo.hintQues.push(quesId);
           player.save();
           nodeInfo.save();
-          logger.notice(success_codes.S4);
+          logger.warn(success_codes.S4);
           return res.json({
             code: "S4",
           });

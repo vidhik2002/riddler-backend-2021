@@ -1,0 +1,185 @@
+{
+  message: 'undefined error occured',
+  level: '\x1B[31merror\x1B[39m',
+  timestamp: '2021-08-17 08:46:36'
+}
+{
+  message: 'user already exists',
+  level: '\x1B[31merror\x1B[39m',
+  timestamp: '2021-08-17 08:53:28'
+}
+{
+  message: 'test1',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '2021-08-17 08:55:07'
+}
+{
+  message: 'test1',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '2021-08-17 08:55:07'
+}
+{
+  message: 'undefined error occured',
+  level: '\x1B[31merror\x1B[39m',
+  timestamp: '2021-08-17 08:55:07'
+}
+{
+  message: 'user inserted successfully',
+  level: '\x1B[33mwarn\x1B[39m',
+  timestamp: '2021-08-17 09:00:34'
+}
+{
+  message: 'requested node is not locked',
+  level: '\x1B[31merror\x1B[39m',
+  timestamp: '2021-08-17 09:00:59'
+}
+{
+  message: 'question returned and locked successfully',
+  level: '\x1B[33mwarn\x1B[39m',
+  timestamp: '2021-08-17 09:01:07'
+}
+{
+  message: 'question returned and locked successfully',
+  level: '\x1B[33mwarn\x1B[39m',
+  timestamp: '2021-08-17 09:01:13'
+}
+{
+  message: 'question returned and locked successfully',
+  level: '\x1B[33mwarn\x1B[39m',
+  timestamp: '2021-08-17 09:01:17'
+}
+{
+  message: 'question returned and locked successfully',
+  level: '\x1B[33mwarn\x1B[39m',
+  timestamp: '2021-08-17 09:01:21'
+}
+{
+  message: 'undefined error occured',
+  level: '\x1B[31merror\x1B[39m',
+  timestamp: '2021-08-17 09:01:32'
+}
+{
+  message: 1,
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '2021-08-17 09:10:41'
+}
+{
+  message: 'unlocked1',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '2021-08-17 09:10:41'
+}
+{
+  message: 'answer correct',
+  level: '\x1B[33mwarn\x1B[39m',
+  timestamp: '2021-08-17 09:10:41'
+}
+{
+  message: 'requested question is already solved',
+  level: '\x1B[31merror\x1B[39m',
+  timestamp: '2021-08-17 09:11:10'
+}
+{
+  message: 'requested question is not unlocked',
+  level: '\x1B[31merror\x1B[39m',
+  timestamp: '2021-08-17 09:11:27'
+}
+{
+  message: 'question returned and locked successfully',
+  level: '\x1B[33mwarn\x1B[39m',
+  timestamp: '2021-08-17 09:11:33'
+}
+{
+  message: 'requested question is already solved',
+  level: '\x1B[31merror\x1B[39m',
+  timestamp: '2021-08-17 09:11:37'
+}
+{
+  message: 'requested node is not locked',
+  level: '\x1B[31merror\x1B[39m',
+  timestamp: '2021-08-17 09:11:43'
+}
+{
+  message: 2,
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '2021-08-17 09:11:48'
+}
+{
+  message: 'unlocked2',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '2021-08-17 09:11:48'
+}
+{
+  message: 5,
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '2021-08-17 09:11:48'
+}
+{
+  message: 'unlocked5',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '2021-08-17 09:11:48'
+}
+{
+  message: 37,
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '2021-08-17 09:11:48'
+}
+{
+  message: 'solved37',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '2021-08-17 09:11:48'
+}
+{
+  message: 1,
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '2021-08-17 09:11:48'
+}
+{
+  message: 'solved1',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '2021-08-17 09:11:48'
+}
+{
+  message: 2,
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '2021-08-17 09:11:48'
+}
+{
+  message: 'already checked2',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '2021-08-17 09:11:48'
+}
+{
+  message: 5,
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '2021-08-17 09:11:48'
+}
+{
+  message: 'already checked5',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '2021-08-17 09:11:48'
+}
+{
+  message: 37,
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '2021-08-17 09:11:48'
+}
+{
+  message: 'already checked37',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '2021-08-17 09:11:48'
+}
+{
+  message: 'answer correct',
+  level: '\x1B[33mwarn\x1B[39m',
+  timestamp: '2021-08-17 09:11:48'
+}
+{
+  message: 'requested question is already solved',
+  level: '\x1B[31merror\x1B[39m',
+  timestamp: '2021-08-17 09:13:06'
+}
+{
+  message: 'requested node is not locked',
+  level: '\x1B[31merror\x1B[39m',
+  timestamp: '2021-08-17 09:13:17'
+}

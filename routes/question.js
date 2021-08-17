@@ -45,7 +45,7 @@ router.post("/", validator.body(quesSchema), async (req, res) => {
           nodeInfo.lockedNode = quesId;
           nodeInfo.save();
         }
-        logger.notice(success_codes.S7);
+        logger.warn(success_codes.S7);
         return res.json({
           code: "S7",
           question: result.question,

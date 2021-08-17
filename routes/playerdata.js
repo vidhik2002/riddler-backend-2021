@@ -15,7 +15,7 @@ router.get("/", async (req, res) => {
         code: "E3",
       });
     }
-    logger.notice(success_codes.S1);
+    logger.warn(success_codes.S1);
     return res.json({ ...player, code: "S1" });
   } catch (e) {
     logger.error(error_codes.E0);

@@ -50,7 +50,7 @@ router.post("/user", async (req, res) => {
     });
 
     stateToEnter.save();
-    logger.notice(success_codes.S5);
+    logger.warn(success_codes.S5);
     res.json({
       code: "S5",
     });
@@ -86,7 +86,7 @@ router.post("/ques", (req, res) => {
     });
 
     quesToEnter.save();
-    logger.notice(success_codes.S6);
+    logger.warn(success_codes.S6);
     res.json({
       code: "S6",
     });

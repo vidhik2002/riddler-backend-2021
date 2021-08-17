@@ -50,7 +50,7 @@ router.post("/", validator.body(authUserSchema), async (req, res) => {
         if (nodeInfo.portalNodes[quesId.toString()].ans.length === 2) {
           q.push(obj[quesId.toString()].portal[0]);
           q.push(obj[quesId.toString()].portal[1]);
-          logger.log(obj[quesId.toString()].portal);
+          logger.info(obj[quesId.toString()].portal);
         } else if (
           nodeInfo.portalNodes[quesId.toString()].ans.length === 1 &&
           !nodeInfo.unlockedNodes.includes(quesId)
@@ -59,19 +59,19 @@ router.post("/", validator.body(authUserSchema), async (req, res) => {
         }
       }
       for (let i = 0; i < q.length; i++) {
-        logger.log(q[i]);
+        logger.info(q[i]);
         if (checked.includes(q[i])) {
           logger.info(`already checked${q[i]}`);
         } else if (!nodeInfo.solvedNodes.includes(q[i])) {
-          logger.log(`unlocked${q[i]}`);
+          logger.info(`unlocked${q[i]}`);
           nodeInfo.unlockedNodes.push(q[i]);
           checked.push(q[i]);
         } else if (nodeInfo.solvedNodes.includes(q[i])) {
-          logger.log(`solved${q[i]}`);
+          logger.info(`solved${q[i]}`);
           checked.push(q[i]);
           await recursion(q[i]);
         } else {
-          logger.log(`${q[i]}couldnot be processed`);
+          logger.info(`${q[i]}couldnot be processed`);
         }
       }
     }
@@ -117,14 +117,14 @@ router.post("/", validator.body(authUserSchema), async (req, res) => {
           if (!nodeInfo.solvedNodes.includes(40)) {
             nodeInfo.unlockedNodes.push(40);
           } else {
-            logger.notice(success_codes.S0);
+            logger.warn(success_codes.S0);
             return res.json({
               code: "S0",
             });
           }
         }
         nodeInfo.save();
-        logger.notice(success_codes.S2);
+        logger.warn(success_codes.S2);
         return res.json({
           code: "S2",
         });

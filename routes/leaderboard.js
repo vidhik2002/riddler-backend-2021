@@ -13,7 +13,7 @@ router.get("/all", async (req, res, next) => {
       username,
       score,
     }));
-    logger.notice(success_codes.S1);
+    logger.warn(success_codes.S1);
     return res.status(200).json(responseJSON);
   } catch (e) {
     logger.error(error_codes.E0);

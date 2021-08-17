@@ -4,3 +4,5 @@ models/questions.json
 utils/insertDB.py
 routes/oldsubmit.js
 scripts/populatedb.js
+logs/combined.log
+logs/error.log

@@ -15,7 +15,7 @@ const {
 // ------------------------------Penalty Route----------------------------------------
 router.post("/", validator.body(authPenaltySchema), async (req, res) => {
   try {
-    console.log("penalty route");
+    logger.info("penalty route");
     const { quesId } = req.body;
     const { username } = req.participant;
     const nodeInfo = await map.findOne({ username: username });
@@ -34,7 +34,7 @@ router.post("/", validator.body(authPenaltySchema), async (req, res) => {
         player.save();
         nodeInfo.lockedNode = 0;
         nodeInfo.save();
-        logger.notice(success_codes.S3);
+        logger.warn(success_codes.S3);
         return res.json({
           code: "S3",
         });
