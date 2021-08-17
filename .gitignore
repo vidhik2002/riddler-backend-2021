@@ -6,3 +6,4 @@ routes/oldsubmit.js
 scripts/populatedb.js
 logs/combined.log
 logs/error.log
+insertQues.js
