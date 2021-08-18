@@ -403,3 +403,8 @@
   level: '\x1B[31merror\x1B[39m',
   timestamp: '2021-08-19 01:32:10'
 }
+{
+  message: 'question inserted successfully',
+  level: '\x1B[33mwarn\x1B[39m',
+  timestamp: '2021-08-19 03:48:10'
+}

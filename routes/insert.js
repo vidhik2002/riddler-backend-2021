@@ -72,8 +72,9 @@ router.post("/ques", (req, res) => {
       isPortal,
       isBridge,
       isStarting,
-      points,
+      pointType,
       hint,
+      track,
     } = req.body;
     let quesToEnter = new ques({
       question: question,
@@ -82,8 +83,9 @@ router.post("/ques", (req, res) => {
       isPortal: isPortal,
       isBridge: isBridge,
       isStarting: isStarting,
-      points: points,
+      pointType: pointType,
       hint: hint,
+      track:track,
     });
 
     quesToEnter.save();
