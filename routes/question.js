@@ -3,6 +3,7 @@ const express = require("express");
 const router = express.Router();
 const map = require("../models/GameState");
 const question = require("../models/Question");
+const user = require("../models/User");
 const { quesSchema } = require("../utils/validation_schema");
 const validator = require("express-joi-validation").createValidator({});
 const { logger } = require("../logs/logger");
@@ -20,9 +21,10 @@ router.post("/", validator.body(quesSchema), async (req, res) => {
     const { username } = req.participant;
     const nodeInfo = await map.findOne({ username: username });
     const result = await question.findOne({ questionId: quesId });
+    const player = await user.findOne({ username: username });
     const starting = [37, 38, 39];
 
-    if (!result || !nodeInfo) {
+    if (!result || !nodeInfo || !player) {
       logger.error(error_codes.E3);
       return res.json({
         code: "E3",
@@ -45,6 +47,8 @@ router.post("/", validator.body(quesSchema), async (req, res) => {
           nodeInfo.lockedNode = quesId;
           nodeInfo.save();
         }
+        player.currentTrack = result.track;
+        player.save();
         logger.warn(success_codes.S7);
         return res.json({
           code: "S7",

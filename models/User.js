@@ -10,11 +10,11 @@ const UserSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  // currentPosition: {
-  //     type: Number,
-  //     required: true,
-  //     default: 0,
-  // },
+  currentTrack: {
+      type: Number,
+      required: true,
+      default: 0,
+  },
   currentPenaltyPoints: {
     type: Number,
     required: true,

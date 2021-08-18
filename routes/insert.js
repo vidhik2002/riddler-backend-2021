@@ -22,6 +22,7 @@ router.post("/user", async (req, res) => {
     let userToEnter = new user({
       username: username,
       score: 0,
+      currentTrack: [0,0],
       currentPenaltyPoints: 20,
     });
 

@@ -188,3 +188,133 @@
   level: '\x1B[33mwarn\x1B[39m',
   timestamp: '2021-08-18 12:02:32'
 }
+{
+  message: 'requested question is already solved',
+  level: '\x1B[31merror\x1B[39m',
+  timestamp: '2021-08-18 13:56:36'
+}
+{
+  message: 'validated correctly',
+  level: '\x1B[33mwarn\x1B[39m',
+  timestamp: '2021-08-18 13:58:59'
+}
+{
+  message: 'user inserted successfully',
+  level: '\x1B[33mwarn\x1B[39m',
+  timestamp: '2021-08-18 14:00:14'
+}
+{
+  message: 'validated correctly',
+  level: '\x1B[33mwarn\x1B[39m',
+  timestamp: '2021-08-18 14:00:21'
+}
+{
+  message: 1,
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '2021-08-18 14:00:52'
+}
+{
+  message: 'user inserted successfully',
+  level: '\x1B[33mwarn\x1B[39m',
+  timestamp: '2021-08-18 14:04:06'
+}
+{
+  message: 'validated correctly',
+  level: '\x1B[33mwarn\x1B[39m',
+  timestamp: '2021-08-18 14:04:16'
+}
+{
+  message: 1,
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '2021-08-18 14:04:28'
+}
+{
+  message: 'user inserted successfully',
+  level: '\x1B[33mwarn\x1B[39m',
+  timestamp: '2021-08-18 14:06:12'
+}
+{
+  message: 'validated correctly',
+  level: '\x1B[33mwarn\x1B[39m',
+  timestamp: '2021-08-18 14:06:16'
+}
+{
+  message: 1,
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '2021-08-18 14:06:25'
+}
+{
+  message: 'user inserted successfully',
+  level: '\x1B[33mwarn\x1B[39m',
+  timestamp: '2021-08-18 14:09:02'
+}
+{
+  message: 'validated correctly',
+  level: '\x1B[33mwarn\x1B[39m',
+  timestamp: '2021-08-18 14:09:05'
+}
+{
+  message: 1,
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '2021-08-18 14:09:15'
+}
+{
+  message: 'unlocked1',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '2021-08-18 14:09:15'
+}
+{
+  message: 'answer correct',
+  level: '\x1B[33mwarn\x1B[39m',
+  timestamp: '2021-08-18 14:09:15'
+}
+{
+  message: 'validated correctly',
+  level: '\x1B[33mwarn\x1B[39m',
+  timestamp: '2021-08-18 14:09:23'
+}
+{
+  message: 'user inserted successfully',
+  level: '\x1B[33mwarn\x1B[39m',
+  timestamp: '2021-08-18 14:11:48'
+}
+{
+  message: 'validated correctly',
+  level: '\x1B[33mwarn\x1B[39m',
+  timestamp: '2021-08-18 14:11:55'
+}
+{
+  message: 'validated correctly',
+  level: '\x1B[33mwarn\x1B[39m',
+  timestamp: '2021-08-18 14:12:57'
+}
+{
+  message: 1,
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '2021-08-18 14:13:01'
+}
+{
+  message: 'unlocked1',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '2021-08-18 14:13:01'
+}
+{
+  message: 'answer correct',
+  level: '\x1B[33mwarn\x1B[39m',
+  timestamp: '2021-08-18 14:13:01'
+}
+{
+  message: 'validated correctly',
+  level: '\x1B[33mwarn\x1B[39m',
+  timestamp: '2021-08-18 14:13:04'
+}
+{
+  message: 'question returned and locked successfully',
+  level: '\x1B[33mwarn\x1B[39m',
+  timestamp: '2021-08-18 14:14:17'
+}
+{
+  message: 'validated correctly',
+  level: '\x1B[33mwarn\x1B[39m',
+  timestamp: '2021-08-18 14:14:22'
+}

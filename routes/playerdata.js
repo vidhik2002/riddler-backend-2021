@@ -19,6 +19,7 @@ router.get("/", async (req, res) => {
     return res.json({
       playerPenaltyPoints: player.currentPenaltyPoints,
       playerScore: player.score,
+      currentTrack: player.currentTrack,
       code: "S1",
     });
   } catch (e) {
