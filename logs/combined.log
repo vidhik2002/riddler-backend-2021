@@ -318,3 +318,68 @@
   level: '\x1B[33mwarn\x1B[39m',
   timestamp: '2021-08-18 14:14:22'
 }
+{
+  message: 'validated correctly',
+  level: '\x1B[33mwarn\x1B[39m',
+  timestamp: '2021-08-18 14:36:13'
+}
+{
+  message: 'user inserted successfully',
+  level: '\x1B[33mwarn\x1B[39m',
+  timestamp: '2021-08-18 14:37:16'
+}
+{
+  message: 'user inserted successfully',
+  level: '\x1B[33mwarn\x1B[39m',
+  timestamp: '2021-08-18 14:38:21'
+}
+{
+  message: 'validated correctly',
+  level: '\x1B[33mwarn\x1B[39m',
+  timestamp: '2021-08-18 14:38:28'
+}
+{
+  message: 'requested question is not unlocked',
+  level: '\x1B[31merror\x1B[39m',
+  timestamp: '2021-08-18 14:38:36'
+}
+{
+  message: 1,
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '2021-08-18 14:38:51'
+}
+{
+  message: 'unlocked1',
+  level: '\x1B[32minfo\x1B[39m',
+  timestamp: '2021-08-18 14:38:51'
+}
+{
+  message: 'answer correct',
+  level: '\x1B[33mwarn\x1B[39m',
+  timestamp: '2021-08-18 14:38:51'
+}
+{
+  message: 'requested question is already solved',
+  level: '\x1B[31merror\x1B[39m',
+  timestamp: '2021-08-18 14:38:58'
+}
+{
+  message: 'requested node is not locked',
+  level: '\x1B[31merror\x1B[39m',
+  timestamp: '2021-08-18 14:39:33'
+}
+{
+  message: 'requested node is not locked',
+  level: '\x1B[31merror\x1B[39m',
+  timestamp: '2021-08-18 14:39:37'
+}
+{
+  message: 'question returned and locked successfully',
+  level: '\x1B[33mwarn\x1B[39m',
+  timestamp: '2021-08-18 14:39:43'
+}
+{
+  message: 'hint given for requested question',
+  level: '\x1B[33mwarn\x1B[39m',
+  timestamp: '2021-08-18 14:39:53'
+}

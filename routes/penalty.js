@@ -28,28 +28,26 @@ router.post("/", validator.body(authPenaltySchema), async (req, res) => {
       });
     }
 
-    if (quesId === nodeInfo.lockedNode && nodeInfo.lockedNode !== 0) {
-      if (player.currentPenaltyPoints >= 10) {
-        player.currentPenaltyPoints -= 10;
-        player.save();
-        nodeInfo.lockedNode = 0;
-        nodeInfo.save();
-        logger.warn(success_codes.S3);
-        return res.json({
-          code: "S3",
-        });
-      } else {
-        logger.error(logical_errors.L4);
-        return res.json({
-          code: "L4",
-        });
-      }
-    } else {
+    if (!(quesId === nodeInfo.lockedNode && nodeInfo.lockedNode !== 0)) {
       logger.error(logical_errors.L3);
       return res.json({
         code: "L3",
       });
     }
+    if (player.currentPenaltyPoints < process.env.PENALTY) {
+      logger.error(logical_errors.L4);
+      return res.json({
+        code: "L4",
+      });
+    }
+    player.currentPenaltyPoints -= process.env.PENALTY;
+    player.save();
+    nodeInfo.lockedNode = 0;
+    nodeInfo.save();
+    logger.warn(success_codes.S3);
+    return res.json({
+      code: "S3",
+    });
   } catch (e) {
     logger.error(error_codes.E0);
     return res.status(500).json({

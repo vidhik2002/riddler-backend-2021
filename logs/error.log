@@ -58,3 +58,23 @@
   level: '\x1B[31merror\x1B[39m',
   timestamp: '2021-08-18 13:56:36'
 }
+{
+  message: 'requested question is not unlocked',
+  level: '\x1B[31merror\x1B[39m',
+  timestamp: '2021-08-18 14:38:36'
+}
+{
+  message: 'requested question is already solved',
+  level: '\x1B[31merror\x1B[39m',
+  timestamp: '2021-08-18 14:38:58'
+}
+{
+  message: 'requested node is not locked',
+  level: '\x1B[31merror\x1B[39m',
+  timestamp: '2021-08-18 14:39:33'
+}
+{
+  message: 'requested node is not locked',
+  level: '\x1B[31merror\x1B[39m',
+  timestamp: '2021-08-18 14:39:37'
+}

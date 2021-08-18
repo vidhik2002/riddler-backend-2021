@@ -6,7 +6,7 @@ cron.schedule('0 */12 * * *', async () => {
         {},
         {
             $set: {
-                currentPenaltyPoints: 20,
+                currentPenaltyPoints: process.env.DEFAULT_PENALTY,
             },
         },
     );
