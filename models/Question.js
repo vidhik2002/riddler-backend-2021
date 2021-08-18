@@ -30,7 +30,7 @@ const QuestionSchema = new mongoose.Schema({
         type: Boolean,
         required: true,
     },
-    points: {
+    pointType: {
         type: Number,
         required: true,
     },

@@ -383,3 +383,23 @@
   level: '\x1B[33mwarn\x1B[39m',
   timestamp: '2021-08-18 14:39:53'
 }
+{
+  message: 'requested node is not locked',
+  level: '\x1B[31merror\x1B[39m',
+  timestamp: '2021-08-18 18:33:31'
+}
+{
+  message: 'all nodes solved game over',
+  level: '\x1B[33mwarn\x1B[39m',
+  timestamp: '2021-08-19 01:24:55'
+}
+{
+  message: 'all nodes solved game over',
+  level: '\x1B[33mwarn\x1B[39m',
+  timestamp: '2021-08-19 01:30:15'
+}
+{
+  message: 'requested question is already solved',
+  level: '\x1B[31merror\x1B[39m',
+  timestamp: '2021-08-19 01:32:10'
+}

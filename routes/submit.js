@@ -108,7 +108,21 @@ router.post("/", validator.body(authUserSchema), async (req, res) => {
       ) {
         nodeInfo.portalNodes[quesId.toString()].ans.push(answer);
       }
-      player.score += result.points; //irrespective of being bridge question or not
+
+      switch (result.pointType) {
+        case 1:
+          player.score += process.env.NORMAL_QUES_POINTS
+          break;
+        case 2:
+          player.score += process.env.PORTAL_QUES_POINTS
+          break;
+        case 3:
+          player.score += process.env.BRIDGE_QUES_POINTS
+          break;
+        default:
+          break;
+      }
+
       nodeInfo.unlockedNodes = [];
       if (
         !(
@@ -118,11 +132,14 @@ router.post("/", validator.body(authUserSchema), async (req, res) => {
       ) {
         nodeInfo.lockedNode = 0;
       }
+
+
       await recursion(quesId);
       if (nodeInfo.unlockedNodes.length === 0) {
         if (!nodeInfo.solvedNodes.includes(40)) {
           nodeInfo.unlockedNodes.push(40);
         } else {
+          nodeInfo.save()
           logger.warn(success_codes.S0);
           return res.json({
             code: "S0",
@@ -150,4 +167,5 @@ router.post("/", validator.body(authUserSchema), async (req, res) => {
     });
   }
 });
+
 module.exports = router;
