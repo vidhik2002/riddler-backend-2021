@@ -111,7 +111,6 @@ router.post("/", validator.body(authUserSchema), async (req, res) => {
         ) {
           nodeInfo.lockedNode = 0;
         }
-        player.save();
         await recursion(quesId);
         if (nodeInfo.unlockedNodes.length === 0) {
           if (!nodeInfo.solvedNodes.includes(40)) {
@@ -124,6 +123,7 @@ router.post("/", validator.body(authUserSchema), async (req, res) => {
           }
         }
         nodeInfo.save();
+        player.save();
         logger.warn(success_codes.S2);
         return res.json({
           code: "S2",
