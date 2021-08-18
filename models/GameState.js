@@ -6,12 +6,6 @@ const MapSchema = new mongoose.Schema({
     required: true,
     unique: true,
   },
-  // startingNode: [
-  //     {
-  //         type: Number,
-  //         required: true,
-  //     },
-  // ],
   unlockedNodes: [
     {
       type: Number,
@@ -58,11 +52,6 @@ const MapSchema = new mongoose.Schema({
     type: Number,
     required: true,
 }],
-  // portalOpen: [
-  //     {
-  //         type: Number,
-  //     },
-  // ],
 });
 const Map = mongoose.model("map", MapSchema);
 module.exports = Map;

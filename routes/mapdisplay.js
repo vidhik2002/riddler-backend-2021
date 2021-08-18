@@ -4,9 +4,7 @@ const router = express.Router();
 const map = require("../models/GameState");
 const { logger } = require("../logs/logger");
 const { error_codes, success_codes } = require("../tools/error_codes");
-//lockedNode, portalNodes, solvedNodes, unlockedNodes, username
 
-// ----------------------------Map Route-------------------------------
 router.post("/", async (req, res) => {
   try {
     const { username } = req.participant;
@@ -44,4 +42,3 @@ router.post("/", async (req, res) => {
 });
 module.exports = router;
 
-// ----------------------------Map Route-------------------------------

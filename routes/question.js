@@ -13,7 +13,6 @@ const {
   success_codes,
 } = require("../tools/error_codes");
 
-// ------------------------------Penalty Route----------------------------------------
 router.post("/", validator.body(quesSchema), async (req, res) => {
   try {
     console.log("question route");
