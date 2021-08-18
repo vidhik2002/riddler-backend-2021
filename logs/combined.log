@@ -183,3 +183,8 @@
   level: '\x1B[31merror\x1B[39m',
   timestamp: '2021-08-17 09:13:17'
 }
+{
+  message: 'validated correctly',
+  level: '\x1B[33mwarn\x1B[39m',
+  timestamp: '2021-08-18 12:02:32'
+}

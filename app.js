@@ -36,7 +36,7 @@ app.use('/map', authMiddleware, apiLimiter, mapRoute);
 app.use('/penalty',authMiddleware, apiLimiter, penaltyRoute);
 app.use('/insert',authMiddleware , apiLimiter, insertRoute);
 app.use('/ques',authMiddleware , apiLimiter, quesRoute);
-app.use('/playerdata',authMiddleware , apiLimiter, playerdataRoute);
+app.use("/playerdata", authMiddleware, apiLimiter, playerdataRoute);
 app.use('/hint',authMiddleware , apiLimiter, hintRoute);
 
 

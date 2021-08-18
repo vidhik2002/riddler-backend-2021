@@ -16,7 +16,11 @@ router.get("/", async (req, res) => {
       });
     }
     logger.warn(success_codes.S1);
-    return res.json({ ...player, code: "S1" });
+    return res.json({
+      playerPenaltyPoints: player.currentPenaltyPoints,
+      playerScore: player.Score,
+      code: "S1",
+    });
   } catch (e) {
     logger.error(error_codes.E0);
     return res.status(500).json({
