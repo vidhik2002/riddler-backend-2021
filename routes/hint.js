@@ -21,47 +21,44 @@ router.post("/", validator.body(quesSchema), async (req, res) => {
     const player = await user.findOne({ username: username });
 
     if (!nodeInfo || !player) {
-      logger.error(error_codes.E3)
+      logger.error(error_codes.E3);
       return res.json({
-        code: "E3"
-      })
+        code: "E3",
+      });
     }
 
-    if (quesId === nodeInfo.lockedNode) {
-      if (nodeInfo.hintQues.includes(quesId)) {
-        logger.warn(logical_errors.L9);
-        return res.json({
-          code: "L9"
-        });
-      } else {
-        if (player.score >= 5) {
-          player.score -= 5; //assuming 5 points are reduced in using a hint
-          nodeInfo.hintQues.push(quesId);
-          player.save();
-          nodeInfo.save();
-          logger.warn(success_codes.S4);
-          return res.json({
-            code: "S4",
-          });
-        } else {
-          logger.error(logical_errors.L2);
-          return res.json({
-            code: "L2",
-          });
-        }
-      }
-    } else {
+    if (!(quesId === nodeInfo.lockedNode)) {
       logger.error(logical_errors.L3);
       return res.json({
         code: "L3",
       });
     }
+    if (nodeInfo.hintQues.includes(quesId)) {
+      logger.warn(logical_errors.L9);
+      return res.json({
+        code: "L9",
+      });
+    }
+    if (player.score < process.env.HINT_PENALTY) {
+      logger.error(logical_errors.L2);
+      return res.json({
+        code: "L2",
+      });
+    }
+    player.score -= process.env.HINT_PENALTY; //assuming 5 points are reduced in using a hint
+    nodeInfo.hintQues.push(quesId);
+    player.save();
+    nodeInfo.save();
+    logger.warn(success_codes.S4);
+    return res.json({
+      code: "S4",
+    });
   } catch (e) {
     logger.error(error_codes.E0);
     return res.status(500).json({
       code: "E0",
       error: e,
-    })
+    });
   }
 });
 

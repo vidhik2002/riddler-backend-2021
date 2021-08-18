@@ -25,10 +25,10 @@ router.post("/", validator.body(authUserSchema), async (req, res) => {
     const player = await user.findOne({ username: username });
 
     if (!result || !nodeInfo || !player) {
-      logger.error(error_codes.E3)
+      logger.error(error_codes.E3);
       return res.json({
-        code: "E3"
-      })
+        code: "E3",
+      });
     }
 
     function readfile(fileName) {
@@ -77,68 +77,69 @@ router.post("/", validator.body(authUserSchema), async (req, res) => {
     }
 
     if (
-      quesId === nodeInfo.lockedNode ||
-      (result.isStarting && nodeInfo.solvedNodes.length === 0) ||
-      nodeInfo.solvedNodes.includes(quesId)
+      !(
+        quesId === nodeInfo.lockedNode ||
+        (result.isStarting && nodeInfo.solvedNodes.length === 0) ||
+        nodeInfo.solvedNodes.includes(quesId)
+      )
     ) {
-      if (
-        (nodeInfo.solvedNodes.includes(quesId) && !result.isPortal) ||
-        (result.isPortal &&
-          (nodeInfo.portalNodes[quesId.toString()].ans.length === 2 ||
-            nodeInfo.portalNodes[quesId.toString()].ans.includes(answer)))
-      ) {
-        logger.error(logical_errors.L7);
-        return res.json({
-          code: "L7",
-        });
-      } else if (result.answer.includes(answer)) {
-        if (!nodeInfo.solvedNodes.includes(quesId)) {
-          nodeInfo.solvedNodes.push(quesId);
-        }
-        if (
-          result.isPortal &&
-          !nodeInfo.portalNodes[quesId.toString()].ans.includes(answer)
-        ) {
-          nodeInfo.portalNodes[quesId.toString()].ans.push(answer);
-        }
-        player.score += result.points; //irrespective of being bridge question or not
-        nodeInfo.unlockedNodes = [];
-        if (
-          !(
-            result.isPortal &&
-            nodeInfo.portalNodes[quesId.toString()].ans.length === 2
-          )
-        ) {
-          nodeInfo.lockedNode = 0;
-        }
-        await recursion(quesId);
-        if (nodeInfo.unlockedNodes.length === 0) {
-          if (!nodeInfo.solvedNodes.includes(40)) {
-            nodeInfo.unlockedNodes.push(40);
-          } else {
-            logger.warn(success_codes.S0);
-            return res.json({
-              code: "S0",
-            });
-          }
-        }
-        nodeInfo.save();
-        player.currentTrack = result.track
-        player.save();
-        logger.warn(success_codes.S2);
-        return res.json({
-          code: "S2",
-        });
-      } else {
-        logger.error(logical_errors.L8);
-        return res.json({
-          code: "L8",
-        });
-      }
-    } else {
       logger.error(logical_errors.L3);
       return res.json({
         code: "L3",
+      });
+    }
+    if (
+      (nodeInfo.solvedNodes.includes(quesId) && !result.isPortal) ||
+      (result.isPortal &&
+        (nodeInfo.portalNodes[quesId.toString()].ans.length === 2 ||
+          nodeInfo.portalNodes[quesId.toString()].ans.includes(answer)))
+    ) {
+      logger.error(logical_errors.L7);
+      return res.json({
+        code: "L7",
+      });
+    } else if (result.answer.includes(answer)) {
+      if (!nodeInfo.solvedNodes.includes(quesId)) {
+        nodeInfo.solvedNodes.push(quesId);
+      }
+      if (
+        result.isPortal &&
+        !nodeInfo.portalNodes[quesId.toString()].ans.includes(answer)
+      ) {
+        nodeInfo.portalNodes[quesId.toString()].ans.push(answer);
+      }
+      player.score += result.points; //irrespective of being bridge question or not
+      nodeInfo.unlockedNodes = [];
+      if (
+        !(
+          result.isPortal &&
+          nodeInfo.portalNodes[quesId.toString()].ans.length === 2
+        )
+      ) {
+        nodeInfo.lockedNode = 0;
+      }
+      await recursion(quesId);
+      if (nodeInfo.unlockedNodes.length === 0) {
+        if (!nodeInfo.solvedNodes.includes(40)) {
+          nodeInfo.unlockedNodes.push(40);
+        } else {
+          logger.warn(success_codes.S0);
+          return res.json({
+            code: "S0",
+          });
+        }
+      }
+      nodeInfo.save();
+      player.currentTrack = result.track;
+      player.save();
+      logger.warn(success_codes.S2);
+      return res.json({
+        code: "S2",
+      });
+    } else {
+      logger.error(logical_errors.L8);
+      return res.json({
+        code: "L8",
       });
     }
   } catch (e) {
