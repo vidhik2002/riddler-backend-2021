@@ -18,7 +18,7 @@ router.get("/", async (req, res) => {
     logger.warn(success_codes.S1);
     return res.json({
       playerPenaltyPoints: player.currentPenaltyPoints,
-      playerScore: player.Score,
+      playerScore: player.score,
       code: "S1",
     });
   } catch (e) {
