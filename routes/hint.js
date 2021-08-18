@@ -12,7 +12,6 @@ const {
   success_codes,
 } = require("../tools/error_codes");
 
-// ------------------------------Penalty Route----------------------------------------
 router.post("/", validator.body(quesSchema), async (req, res) => {
   try {
     const { quesId } = req.body;
@@ -62,4 +61,5 @@ router.post("/", validator.body(quesSchema), async (req, res) => {
     });
   }
 });
+
 module.exports = router;
