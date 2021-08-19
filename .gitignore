@@ -7,6 +7,6 @@ logs/combined.log
 logs/error.log
 logs/combinedtracker.log
 logs/errortracker.log
-./insertQues.js
+insertQues.js
 routes/test.js
 
