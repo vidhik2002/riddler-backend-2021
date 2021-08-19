@@ -39,13 +39,13 @@ router.post("/", validator.body(quesSchema), async (req, res) => {
         code: "L9",
       });
     }
-    if (player.score < process.env.HINT_PENALTY) {
+    if (player.score < parseInt(process.env.HINT_PENALTY)) {
       logger.error(logical_errors.L2);
       return res.json({
         code: "L2",
       });
     }
-    player.score -= process.env.HINT_PENALTY; //assuming 5 points are reduced in using a hint
+    player.score -= parseInt(process.env.HINT_PENALTY); //assuming 5 points are reduced in using a hint
     nodeInfo.hintQues.push(quesId);
     player.save();
     nodeInfo.save();
