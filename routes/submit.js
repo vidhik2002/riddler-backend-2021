@@ -125,13 +125,13 @@ router.post("/", validator.body(authUserSchema), async (req, res) => {
 
       switch (result.pointType) {
         case 1:
-          player.score += parseInt(process.env.NORMAL_QUES_POINTS);
+          player.score += 100;
           break;
         case 2:
-          player.score += parseInt(process.env.PORTAL_QUES_POINTS);
+          player.score += 50;
           break;
         case 3:
-          player.score += parseInt(process.env.BRIDGE_QUES_POINTS);
+          player.score += 70;
           break;
         default:
           break;

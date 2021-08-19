@@ -33,13 +33,13 @@ router.post("/", validator.body(authPenaltySchema), async (req, res) => {
         code: "L3",
       });
     }
-    if (player.currentPenaltyPoints < parseInt(process.env.PENALTY)) {
+    if (player.currentPenaltyPoints < 1) {
       logger.error(logical_errors.L4);
       return res.json({
         code: "L4",
       });
     }
-    player.currentPenaltyPoints -= parseInt(process.env.PENALTY);
+    player.currentPenaltyPoints -= 1;
     player.save();
     nodeInfo.lockedNode = 0;
     nodeInfo.save();

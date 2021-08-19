@@ -23,7 +23,7 @@ router.post("/user", async (req, res) => {
       username: username,
       score: 0,
       currentTrack: [0,0],
-      currentPenaltyPoints: parseInt(process.env.DEFAULT_PENALTY),
+      currentPenaltyPoints: 2,
     });
 
     userToEnter.save();
