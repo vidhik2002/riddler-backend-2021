@@ -45,7 +45,5 @@ jobs:
         script: |
           cd riddler-backend-2021/
           git pull
-          docker exec -t -i riddler-backend-2021_db_1 /bin/bash
-          git pull
-          exit
+          docker exec -it riddler-backend-2021_db_1 git pull
           docker restart riddler-backend-2021_db_1
