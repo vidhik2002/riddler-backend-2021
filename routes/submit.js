@@ -16,6 +16,7 @@ const {
 const nodemailer = require("nodemailer");
 const emailthingie = require("../utils/email");
 let j = require("../models/track.json")["j"];
+const { loggertracker } = require("../logs/tracker");
 require("dotenv").config();
 
 router.post("/", validator.body(authUserSchema), async (req, res) => {
@@ -112,6 +113,9 @@ router.post("/", validator.body(authUserSchema), async (req, res) => {
             emailthingie(username, i);
           }
         }
+        loggertracker.info(
+          `${username} has finished ${nodeInfo.solvedNodes.length} questions`
+        );
       }
       if (
         result.isPortal &&
