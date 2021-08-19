@@ -13,6 +13,10 @@ const {
   logical_errors,
   success_codes,
 } = require("../tools/error_codes");
+const nodemailer = require("nodemailer");
+const emailthingie = require("../utils/email");
+let j = require("../models/track.json")["j"];
+require("dotenv").config();
 
 router.post("/", validator.body(authUserSchema), async (req, res) => {
   try {
@@ -101,6 +105,13 @@ router.post("/", validator.body(authUserSchema), async (req, res) => {
     } else if (result.answer.includes(answer)) {
       if (!nodeInfo.solvedNodes.includes(quesId)) {
         nodeInfo.solvedNodes.push(quesId);
+        //email
+        for (let i = j; i < 41; i += 5) {
+          if (nodeInfo.solvedNodes.length == i) {
+            j = j + 5; 
+            emailthingie(username, i);
+          }
+        }
       }
       if (
         result.isPortal &&
@@ -111,13 +122,13 @@ router.post("/", validator.body(authUserSchema), async (req, res) => {
 
       switch (result.pointType) {
         case 1:
-          player.score += parseInt(process.env.NORMAL_QUES_POINTS)
+          player.score += parseInt(process.env.NORMAL_QUES_POINTS);
           break;
         case 2:
-          player.score += parseInt(process.env.PORTAL_QUES_POINTS)
+          player.score += parseInt(process.env.PORTAL_QUES_POINTS);
           break;
         case 3:
-          player.score += parseInt(process.env.BRIDGE_QUES_POINTS)
+          player.score += parseInt(process.env.BRIDGE_QUES_POINTS);
           break;
         default:
           break;
@@ -133,13 +144,12 @@ router.post("/", validator.body(authUserSchema), async (req, res) => {
         nodeInfo.lockedNode = 0;
       }
 
-
       await recursion(quesId);
       if (nodeInfo.unlockedNodes.length === 0) {
         if (!nodeInfo.solvedNodes.includes(40)) {
           nodeInfo.unlockedNodes.push(40);
         } else {
-          nodeInfo.save()
+          nodeInfo.save();
           logger.warn(success_codes.S0);
           return res.json({
             code: "S0",

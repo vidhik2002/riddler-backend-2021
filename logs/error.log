@@ -88,3 +88,8 @@
   level: '\x1B[31merror\x1B[39m',
   timestamp: '2021-08-19 01:32:10'
 }
+{
+  message: 'requested node is not locked',
+  level: '\x1B[31merror\x1B[39m',
+  timestamp: '2021-08-19 19:23:25'
+}
