@@ -106,6 +106,9 @@ router.post("/", validator.body(authUserSchema), async (req, res) => {
     } else if (result.answer.includes(answer)) {
       if (!nodeInfo.solvedNodes.includes(quesId)) {
         nodeInfo.solvedNodes.push(quesId);
+        loggertracker.info(
+          `${username} has solved ${quesId} question`
+        );
         //email
         for (let i = j; i < 41; i += 5) {
           if (nodeInfo.solvedNodes.length == i) {
@@ -113,9 +116,6 @@ router.post("/", validator.body(authUserSchema), async (req, res) => {
             emailthingie(username, i);
           }
         }
-        loggertracker.info(
-          `${username} has finished ${nodeInfo.solvedNodes.length} questions`
-        );
       }
       if (
         result.isPortal &&
