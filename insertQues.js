@@ -52,9 +52,9 @@ for (let i = 1; i < 41; i++) {
     question: {
       text: `question ${i}?`,
       img: [
-        "https://cdn.vox-cdn.com/thumbor/HWPOwK-35K4Zkh3_t5Djz8od-jE=/0x86:1192x710/fit-in/1200x630/cdn.vox-cdn.com/uploads/chorus_asset/file/22312759/rickroll_4k.jpg",
+        "https://media.cdn.adultswim.com/uploads/20190912/199121118311-blackjesus3_mobileHero_2f9fa6.png",
       ],
-      links: ["https://www.youtube.com/watch?v=dQw4w9WgXcQ"],
+      links: ["https://www.youtube.com/"],
     },
     answer: portal.includes(i)? ["idk","udk"]:["idk"],
     questionId: i,
@@ -64,9 +64,9 @@ for (let i = 1; i < 41; i++) {
     hint: {
       text: `hint ${i}`,
       img: [
-        "https://cdn.vox-cdn.com/thumbor/HWPOwK-35K4Zkh3_t5Djz8od-jE=/0x86:1192x710/fit-in/1200x630/cdn.vox-cdn.com/uploads/chorus_asset/file/22312759/rickroll_4k.jpg",
+        "https://media.cdn.adultswim.com/uploads/20190912/199121118311-blackjesus3_mobileHero_2f9fa6.png",
       ],
-      links: ["https://www.youtube.com/watch?v=dQw4w9WgXcQ"],
+      links: ["https://www.youtube.com/"],
     },
     track: track,
   });
