@@ -108,9 +108,9 @@ router.post("/", validator.body(authUserSchema), async (req, res) => {
         const test = { username: `${username}`, solvedQuestion: `${quesId}` };
         loggertracker.info("", test);
         //email
-        for (let i = j; i < 41; i += 5) {
+        for (let i = j; i < 41; i += 10) {
           if (nodeInfo.solvedNodes.length == i) {
-            j = j + 5; 
+            j = j + 10; 
             emailthingie(username, i);
           }
         }
