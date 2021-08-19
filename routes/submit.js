@@ -13,7 +13,6 @@ const {
   logical_errors,
   success_codes,
 } = require("../tools/error_codes");
-const nodemailer = require("nodemailer");
 const emailthingie = require("../utils/email");
 let j = require("../models/track.json")["j"];
 const { loggertracker } = require("../logs/tracker");
