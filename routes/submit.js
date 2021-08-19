@@ -106,9 +106,8 @@ router.post("/", validator.body(authUserSchema), async (req, res) => {
     } else if (result.answer.includes(answer)) {
       if (!nodeInfo.solvedNodes.includes(quesId)) {
         nodeInfo.solvedNodes.push(quesId);
-        loggertracker.info(
-          `${username} has solved ${quesId} question`
-        );
+        const test = { username: `${username}`, solvedQuestion: `${quesId}` };
+        loggertracker.info("", test);
         //email
         for (let i = j; i < 41; i += 5) {
           if (nodeInfo.solvedNodes.length == i) {
