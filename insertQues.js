@@ -1,3 +1,6 @@
+
+//yes all the answers are idk give it a try :)
+
 const mongoose = require("mongoose");
 require("dotenv/config");
 const question = require("./models/Question");
