@@ -6,6 +6,5 @@ scripts/populatedb.js
 logs/combined.log
 logs/error.log
 ./insertQues.js
-utils/email.js
 routes/test.js
-models/track.json
+

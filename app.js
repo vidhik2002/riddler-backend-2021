@@ -30,7 +30,7 @@ const insertRoute = require('./routes/insert');
 const quesRoute = require('./routes/question');
 const playerdataRoute = require('./routes/playerdata');
 const hintRoute = require('./routes/hint');
-//const testRoute = require('./routes/test')
+const testRoute = require('./routes/test')
 
 const apiLimiter = rateLimit({
     windowMs: 15 * 60 * 1000, // 15 minutes
@@ -46,7 +46,7 @@ app.use('/insert',authMiddleware , apiLimiter, insertRoute);
 app.use('/ques',authMiddleware , apiLimiter, quesRoute);
 app.use('/playerdata', authMiddleware, apiLimiter, playerdataRoute);
 app.use('/hint',authMiddleware , apiLimiter, hintRoute);
-//app.use('/test', testRoute);
+app.use('/test', testRoute);
 
 
 app.use((error, req, res, next) => {
