@@ -24,12 +24,17 @@ router.post("/", validator.body(authUserSchema), async (req, res) => {
     const { username } = req.participant;
     const { answer } = req.body; // as a string in list
 
+    const playerInfo = {
+      username:username,
+      questionID:quesId,
+    }
+
     const result = await question.findOne({ questionId: quesId });
     const nodeInfo = await map.findOne({ username: username });
     const player = await user.findOne({ username: username });
 
     if (!result || !nodeInfo || !player) {
-      logger.error(error_codes.E3);
+      logger.error(error_codes.E3, playerInfo);
       return res.json({
         code: "E3",
       });
@@ -54,7 +59,6 @@ router.post("/", validator.body(authUserSchema), async (req, res) => {
         if (nodeInfo.portalNodes[quesId.toString()].ans.length === 2) {
           q.push(obj[quesId.toString()].portal[0]);
           q.push(obj[quesId.toString()].portal[1]);
-          logger.info(obj[quesId.toString()].portal);
         } else if (
           nodeInfo.portalNodes[quesId.toString()].ans.length === 1 &&
           !nodeInfo.unlockedNodes.includes(quesId)
@@ -63,7 +67,6 @@ router.post("/", validator.body(authUserSchema), async (req, res) => {
         }
       }
       for (let i = 0; i < q.length; i++) {
-        logger.info(q[i]);
         if (checked.includes(q[i])) {
         } else if (!nodeInfo.solvedNodes.includes(q[i])) {
           nodeInfo.unlockedNodes.push(q[i]);
@@ -72,7 +75,7 @@ router.post("/", validator.body(authUserSchema), async (req, res) => {
           checked.push(q[i]);
           await recursion(q[i]);
         } else {
-          logger.info(`${q[i]}couldnot be processed`);
+          logger.info(`${q[i]}couldnot be processed`, playerInfo);
         }
       }
     }
@@ -84,7 +87,7 @@ router.post("/", validator.body(authUserSchema), async (req, res) => {
         nodeInfo.solvedNodes.includes(quesId)
       )
     ) {
-      logger.error(logical_errors.L3);
+      logger.error(logical_errors.L3, playerInfo);
       return res.json({
         code: "L3",
       });
@@ -95,7 +98,7 @@ router.post("/", validator.body(authUserSchema), async (req, res) => {
         (nodeInfo.portalNodes[quesId.toString()].ans.length === 2 ||
           nodeInfo.portalNodes[quesId.toString()].ans.includes(answer)))
     ) {
-      logger.error(logical_errors.L7);
+      logger.error(logical_errors.L7, playerInfo);
       return res.json({
         code: "L7",
       });
@@ -149,7 +152,7 @@ router.post("/", validator.body(authUserSchema), async (req, res) => {
           nodeInfo.unlockedNodes.push(40);
         } else {
           nodeInfo.save();
-          logger.warn(success_codes.S0);
+          logger.warn(success_codes.S0, playerInfo);
           return res.json({
             code: "S0",
           });
@@ -158,18 +161,18 @@ router.post("/", validator.body(authUserSchema), async (req, res) => {
       nodeInfo.save();
       player.currentTrack = result.track;
       player.save();
-      logger.warn(success_codes.S2);
+      logger.warn(success_codes.S2, playerInfo);
       return res.json({
         code: "S2",
       });
     } else {
-      logger.error(logical_errors.L8);
+      logger.error(logical_errors.L8, playerInfo);
       return res.json({
         code: "L8",
       });
     }
   } catch (e) {
-    logger.error(error_codes.E0);
+    logger.error(error_codes.E0, playerInfo);
     return res.status(500).json({
       code: "E0",
       error: e,
