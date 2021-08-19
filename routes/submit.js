@@ -66,13 +66,10 @@ router.post("/", validator.body(authUserSchema), async (req, res) => {
       for (let i = 0; i < q.length; i++) {
         logger.info(q[i]);
         if (checked.includes(q[i])) {
-          logger.info(`already checked${q[i]}`);
         } else if (!nodeInfo.solvedNodes.includes(q[i])) {
-          logger.info(`unlocked${q[i]}`);
           nodeInfo.unlockedNodes.push(q[i]);
           checked.push(q[i]);
         } else if (nodeInfo.solvedNodes.includes(q[i])) {
-          logger.info(`solved${q[i]}`);
           checked.push(q[i]);
           await recursion(q[i]);
         } else {
