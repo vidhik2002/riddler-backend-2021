@@ -64,19 +64,14 @@ router.post("/", validator.body(authUserSchema), async (req, res) => {
         }
       }
       for (let i = 0; i < q.length; i++) {
-        logger.info(q[i]);
-        if (checked.includes(q[i])) {
-          logger.info(`already checked${q[i]}`);
-        } else if (!nodeInfo.solvedNodes.includes(q[i])) {
-          logger.info(`unlocked${q[i]}`);
+        if (!nodeInfo.solvedNodes.includes(q[i]) && !checked.includes(q[i])) {
           nodeInfo.unlockedNodes.push(q[i]);
           checked.push(q[i]);
         } else if (nodeInfo.solvedNodes.includes(q[i])) {
-          logger.info(`solved${q[i]}`);
           checked.push(q[i]);
           await recursion(q[i]);
         } else {
-          logger.info(`${q[i]}couldnot be processed`);
+          logger.error(`${q[i]}couldnot be processed`);
         }
       }
     }
@@ -111,7 +106,7 @@ router.post("/", validator.body(authUserSchema), async (req, res) => {
         //email
         for (let i = j; i < 41; i += 5) {
           if (nodeInfo.solvedNodes.length == i) {
-            j = j + 5; 
+            j = j + 5;
             emailthingie(username, i);
           }
         }
