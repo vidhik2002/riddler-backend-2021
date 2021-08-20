@@ -8,10 +8,10 @@ require('dotenv/config');
 require('./models/dbInit');
 require('./utils/resetPenaltyPoints');
 
-var corsOptions = {
-  origin: 'http://example.com',
-  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-}
+// var corsOptions = {
+//   origin: 'http://example.com',
+//   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+// }
 app.use(cors())
 // app.use(cors({
 //     origin: process.env.ORIGIN_URL,

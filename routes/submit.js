@@ -85,7 +85,7 @@ router.post("/", validator.body(authUserSchema), async (req, res) => {
         nodeInfo.solvedNodes.includes(quesId)
       )
     ) {
-      logger.error(logical_errors.L3);
+      logger.info(logical_errors.L3);
       return res.json({
         code: "L3",
       });
@@ -96,7 +96,7 @@ router.post("/", validator.body(authUserSchema), async (req, res) => {
         (nodeInfo.portalNodes[quesId.toString()].ans.length === 2 ||
           nodeInfo.portalNodes[quesId.toString()].ans.includes(answer)))
     ) {
-      logger.error(logical_errors.L7);
+      logger.info(logical_errors.L7);
       return res.json({
         code: "L7",
       });
@@ -108,7 +108,7 @@ router.post("/", validator.body(authUserSchema), async (req, res) => {
         //email
         for (let i = j; i < 41; i += 5) {
           if (nodeInfo.solvedNodes.length == i) {
-            j = j + 5; 
+            j = j + 10; 
             emailthingie(username, i);
           }
         }
@@ -164,7 +164,7 @@ router.post("/", validator.body(authUserSchema), async (req, res) => {
         code: "S2",
       });
     } else {
-      logger.error(logical_errors.L8);
+      logger.info(logical_errors.L8);
       return res.json({
         code: "L8",
       });
