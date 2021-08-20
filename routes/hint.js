@@ -32,7 +32,7 @@ router.post("/", validator.body(quesSchema), async (req, res) => {
       });
     }
 
-    if (!(quesId === nodeInfo.lockedNode)) {
+    if (!(quesId === nodeInfo.lockedNode) && nodeInfo.solvedNodes.length !== 0) {
       logger.error(logical_errors.L3, playerInfo);
       return res.json({
         code: "L3",
