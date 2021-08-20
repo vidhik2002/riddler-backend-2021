@@ -14,9 +14,12 @@ const {
 router.post("/user", async (req, res) => {
   try {
     const { username } = req.participant;
+    const playerInfo = {
+      username:username,
+    }
     const userExists = await user.exists({ username: username });
     if (userExists) {
-      logger.error(logical_errors.L1);
+      logger.error(logical_errors.L1, playerInfo);
       return res.json({ code: "L1" });
     }
     let userToEnter = new user({
@@ -51,12 +54,12 @@ router.post("/user", async (req, res) => {
     });
 
     stateToEnter.save();
-    logger.warn(success_codes.S5);
+    logger.warn(success_codes.S5, playerInfo);
     res.json({
       code: "S5",
     });
   } catch (e) {
-    logger.error(error_codes.E0);
+    logger.error(error_codes.E0, playerInfo);
     return res.status(500).json({
       code: "E0",
     });
@@ -70,7 +73,6 @@ router.post("/ques", (req, res) => {
       answer,
       questionId,
       isPortal,
-      isBridge,
       isStarting,
       pointType,
       hint,
@@ -81,7 +83,6 @@ router.post("/ques", (req, res) => {
       answer: answer,
       questionId: questionId,
       isPortal: isPortal,
-      isBridge: isBridge,
       isStarting: isStarting,
       pointType: pointType,
       hint: hint,
@@ -89,12 +90,12 @@ router.post("/ques", (req, res) => {
     });
 
     quesToEnter.save();
-    logger.warn(success_codes.S6);
+    logger.warn(success_codes.S6, playerInfo);
     res.json({
       code: "S6",
     });
   } catch (e) {
-    logger.error(error_codes.E0);
+    logger.error(error_codes.E0, playerInfo);
     return res.status(500).json({
       code: "E0",
     });

@@ -13,10 +13,10 @@ const QuestionSchema = new mongoose.Schema({
             type: String,
         }],
     },
-    answer: {
-        type: [String],
+    answer: [{
+        type: String,
         required: true,
-    },
+    }],
     questionId: {
         type: Number,
         required: true,

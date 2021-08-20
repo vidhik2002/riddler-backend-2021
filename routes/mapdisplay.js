@@ -8,10 +8,14 @@ const { error_codes, success_codes } = require("../tools/error_codes");
 router.post("/", async (req, res) => {
   try {
     const { username } = req.participant;
+
+    const playerInfo = {
+      username:username,
+    }
     const nodeInfo = await map.findOne({ username: username });
 
     if (!nodeInfo) {
-      logger.error(error_codes.E3);
+      logger.error(error_codes.E3, playerInfo);
       return res.json({
         code: "E3",
       });
@@ -23,7 +27,7 @@ router.post("/", async (req, res) => {
       32: nodeInfo.portalNodes["32"].ans.length == 2,
     };
 
-    logger.warn(success_codes.S1);
+    logger.warn(success_codes.S1, playerInfo);
     return res.json({
       username: nodeInfo.username,
       portalNodes: portalNodes,
@@ -33,7 +37,7 @@ router.post("/", async (req, res) => {
       code: "S1",
     });
   } catch (e) {
-    logger.error(error_codes.E0);
+    logger.error(error_codes.E0, playerInfo);
     return res.status(500).json({
       code: "E0",
       error: e,

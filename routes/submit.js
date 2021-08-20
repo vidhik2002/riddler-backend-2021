@@ -13,7 +13,6 @@ const {
   logical_errors,
   success_codes,
 } = require("../tools/error_codes");
-const nodemailer = require("nodemailer");
 const emailthingie = require("../utils/email");
 let j = require("../models/track.json")["j"];
 const { loggertracker } = require("../logs/tracker");
@@ -25,12 +24,17 @@ router.post("/", validator.body(authUserSchema), async (req, res) => {
     const { username } = req.participant;
     const { answer } = req.body; // as a string in list
 
+    const playerInfo = {
+      username:username,
+      questionID:quesId,
+    }
+
     const result = await question.findOne({ questionId: quesId });
     const nodeInfo = await map.findOne({ username: username });
     const player = await user.findOne({ username: username });
 
     if (!result || !nodeInfo || !player) {
-      logger.error(error_codes.E3);
+      logger.error(error_codes.E3, playerInfo);
       return res.json({
         code: "E3",
       });
@@ -55,7 +59,6 @@ router.post("/", validator.body(authUserSchema), async (req, res) => {
         if (nodeInfo.portalNodes[quesId.toString()].ans.length === 2) {
           q.push(obj[quesId.toString()].portal[0]);
           q.push(obj[quesId.toString()].portal[1]);
-          logger.info(obj[quesId.toString()].portal);
         } else if (
           nodeInfo.portalNodes[quesId.toString()].ans.length === 1 &&
           !nodeInfo.unlockedNodes.includes(quesId)
@@ -64,7 +67,6 @@ router.post("/", validator.body(authUserSchema), async (req, res) => {
         }
       }
       for (let i = 0; i < q.length; i++) {
-        logger.info(q[i]);
         if (checked.includes(q[i])) {
         } else if (!nodeInfo.solvedNodes.includes(q[i])) {
           nodeInfo.unlockedNodes.push(q[i]);
@@ -73,7 +75,7 @@ router.post("/", validator.body(authUserSchema), async (req, res) => {
           checked.push(q[i]);
           await recursion(q[i]);
         } else {
-          logger.info(`${q[i]}couldnot be processed`);
+          logger.info(`${q[i]}couldnot be processed`, playerInfo);
         }
       }
     }
@@ -106,7 +108,7 @@ router.post("/", validator.body(authUserSchema), async (req, res) => {
         const test = { username: `${username}`, solvedQuestion: `${quesId}` };
         loggertracker.info("", test);
         //email
-        for (let i = j; i < 41; i += 5) {
+        for (let i = j; i < 41; i += 10) {
           if (nodeInfo.solvedNodes.length == i) {
             j = j + 10; 
             emailthingie(username, i);
@@ -150,7 +152,7 @@ router.post("/", validator.body(authUserSchema), async (req, res) => {
           nodeInfo.unlockedNodes.push(40);
         } else {
           nodeInfo.save();
-          logger.warn(success_codes.S0);
+          logger.warn(success_codes.S0, playerInfo);
           return res.json({
             code: "S0",
           });
@@ -159,7 +161,7 @@ router.post("/", validator.body(authUserSchema), async (req, res) => {
       nodeInfo.save();
       player.currentTrack = result.track;
       player.save();
-      logger.warn(success_codes.S2);
+      logger.warn(success_codes.S2, playerInfo);
       return res.json({
         code: "S2",
       });
@@ -170,7 +172,7 @@ router.post("/", validator.body(authUserSchema), async (req, res) => {
       });
     }
   } catch (e) {
-    logger.error(error_codes.E0);
+    logger.error(error_codes.E0, playerInfo);
     return res.status(500).json({
       code: "E0",
       error: e,
