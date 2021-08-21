@@ -111,7 +111,11 @@ router.post("/", validator.body(authUserSchema), async (req, res) => {
         for (let i = j; i < 41; i += 10) {
           if (nodeInfo.solvedNodes.length == i) {
             j = j + 10; 
-            emailthingie(username, i);
+            // emailthingie(username, i);
+            // loggertracker.warn({
+            //   username,
+            //   numberOfQuestions: i
+            // })
           }
         }
       }

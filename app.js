@@ -6,7 +6,6 @@ const cors = require('cors');
 
 require('dotenv/config');
 require('./models/dbInit');
-require('./utils/resetPenaltyPoints');
 
 // var corsOptions = {
 //   origin: 'http://example.com',
@@ -30,7 +29,8 @@ const insertRoute = require('./routes/insert');
 const quesRoute = require('./routes/question');
 const playerdataRoute = require('./routes/playerdata');
 const hintRoute = require('./routes/hint');
-//const testRoute = require('./routes/test')
+const hintPointsRoute = require('./routes/hintPoints');
+
 
 const apiLimiter = rateLimit({
     windowMs: 15 * 60 * 1000, // 15 minutes
@@ -46,6 +46,7 @@ app.use('/insert',authMiddleware , insertRoute);
 app.use('/ques',authMiddleware , quesRoute);
 app.use('/playerdata', authMiddleware, playerdataRoute);
 app.use('/hint',authMiddleware , hintRoute);
+app.use('/hintpoints',authMiddleware , hintPointsRoute);
 //app.use('/test', testRoute);
 
 

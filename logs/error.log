@@ -1,0 +1,32 @@
+{ username: 'nimish',
+  level: '\u001b[31merror\u001b[39m',
+  message: 'values not found in database',
+  timestamp: '2021-08-21 19:58:35' }
+{ username: 'nimish',
+  level: '\u001b[31merror\u001b[39m',
+  message: 'values not found in database',
+  timestamp: '2021-08-21 19:58:38' }
+{ username: 'nimish',
+  level: '\u001b[31merror\u001b[39m',
+  message: 'values not found in database',
+  timestamp: '2021-08-21 20:00:57' }
+{ username: 'nimish',
+  level: '\u001b[31merror\u001b[39m',
+  message: 'values not found in database',
+  timestamp: '2021-08-21 20:01:00' }
+{ username: 'nimish',
+  level: '\u001b[31merror\u001b[39m',
+  message: 'values not found in database',
+  timestamp: '2021-08-21 20:01:01' }
+{ username: 'nimish',
+  level: '\u001b[31merror\u001b[39m',
+  message: 'values not found in database',
+  timestamp: '2021-08-21 20:03:12' }
+{ username: 'nimish',
+  level: '\u001b[31merror\u001b[39m',
+  message: 'values not found in database',
+  timestamp: '2021-08-21 20:03:16' }
+{ username: 'nimish',
+  level: '\u001b[31merror\u001b[39m',
+  message: 'values not found in database',
+  timestamp: '2021-08-21 20:03:30' }
