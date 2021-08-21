@@ -20,6 +20,11 @@ const UserSchema = new mongoose.Schema({
     required: true,
     default: 20,
   },
+  lastSolve: {
+    type: Date,
+    required: true,
+    default: Date.now
+  }
 });
 const User = mongoose.model('user', UserSchema);
 module.exports = User;

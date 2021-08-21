@@ -7,7 +7,7 @@ const { error_codes, success_codes } = require("../tools/error_codes");
 
 router.get("/all", async (req, res, next) => {
   try {
-    const allUsers = await user.find();
+    const allUsers = await user.find().sort({lastSolve: 1});
     allUsers.sort((a, b) => b.score - a.score);
     const responseJSON = allUsers.map(({ username, score }) => ({
       username,

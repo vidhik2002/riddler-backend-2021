@@ -164,6 +164,7 @@ router.post("/", validator.body(authUserSchema), async (req, res) => {
       }
       nodeInfo.save();
       player.currentTrack = result.track;
+      player.lastSolve = new Date().getTime()
       player.save();
       logger.warn(success_codes.S2, playerInfo);
       return res.json({
