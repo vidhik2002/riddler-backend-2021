@@ -5,6 +5,7 @@ const fs = require("fs");
 const user = require("../models/User");
 const map = require("../models/GameState");
 const question = require("../models/Question");
+const Milestone = require("../models/milestone");
 const { authUserSchema } = require("../utils/validation_schema");
 const validator = require("express-joi-validation").createValidator({});
 const { logger } = require("../logs/logger");
@@ -32,6 +33,7 @@ router.post("/", validator.body(authUserSchema), async (req, res) => {
     const result = await question.findOne({ questionId: quesId });
     const nodeInfo = await map.findOne({ username: username });
     const player = await user.findOne({ username: username });
+    const milestone = await Milestone.findOne({ })
 
     if (!result || !nodeInfo || !player) {
       logger.error(error_codes.E3, playerInfo);
@@ -108,15 +110,14 @@ router.post("/", validator.body(authUserSchema), async (req, res) => {
         const test = { username: `${username}`, solvedQuestion: `${quesId}` };
         loggertracker.info("", test);
         //email
-        for (let i = j; i < 41; i += 10) {
-          if (nodeInfo.solvedNodes.length == i) {
-            j = j + 10; 
-            // emailthingie(username, i);
-            // loggertracker.warn({
-            //   username,
-            //   numberOfQuestions: i
-            // })
-          }
+        if (nodeInfo.solvedNodes.length == milestone.milestone) { 
+          // emailthingie(username, i);
+          loggertracker.warn("milestone reached!!",{
+            username,
+            numberOfQuestions: milestone.milestone
+          })
+          milestone.milestone +=10
+          milestone.save()
         }
       }
       if (
