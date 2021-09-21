@@ -1,0 +1,1369 @@
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:22:01' }
+{ message: 'validated correctly',
+  level: '\u001b[33mwarn\u001b[39m',
+  timestamp: '2021-08-21 19:22:02' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:22:03' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:22:03' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:22:06' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:22:06' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:23:15' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:24:15' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:24:16' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:24:18' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:24:18' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:24:18' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:24:19' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:24:20' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:24:30' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:24:30' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:24:33' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:24:33' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:24:43' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:24:43' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:25:34' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:25:34' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:26:14' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:26:14' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:26:17' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:26:17' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:26:17' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:26:19' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:26:19' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:27:01' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:27:07' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:27:07' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:27:09' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:27:10' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:27:17' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:27:18' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:27:20' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:28:27' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:28:27' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:28:29' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:28:52' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:28:53' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:28:53' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:28:54' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:29:43' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:29:44' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:29:44' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:29:53' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:29:53' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:30:12' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:30:12' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:30:15' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:30:16' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:30:16' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:30:18' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:30:31' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:30:31' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:30:34' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:31:06' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:32:18' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:36:32' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:36:32' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:36:34' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:37:34' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:37:34' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:37:35' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:38:55' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:38:55' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:38:57' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:38:57' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:40:57' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:41:19' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:42:33' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:42:44' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:42:44' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:42:45' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:42:46' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:42:48' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:43:12' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:43:20' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:43:20' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:43:23' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:43:23' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:43:25' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:47:54' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:47:57' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:48:13' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:48:14' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:48:15' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:48:16' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:50:53' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:50:53' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:50:54' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:50:54' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:52:42' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:52:55' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:53:15' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:53:17' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:53:17' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:56:18' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:56:18' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:56:22' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:56:22' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:58:35' }
+{ username: 'nimish',
+  level: '\u001b[31merror\u001b[39m',
+  message: 'values not found in database',
+  timestamp: '2021-08-21 19:58:35' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 19:58:38' }
+{ username: 'nimish',
+  level: '\u001b[31merror\u001b[39m',
+  message: 'values not found in database',
+  timestamp: '2021-08-21 19:58:38' }
+{ username: 'nimish',
+  level: '\u001b[31merror\u001b[39m',
+  message: 'values not found in database',
+  timestamp: '2021-08-21 20:00:57' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:00:57' }
+{ username: 'nimish',
+  level: '\u001b[31merror\u001b[39m',
+  message: 'values not found in database',
+  timestamp: '2021-08-21 20:01:00' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:01:00' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:01:01' }
+{ username: 'nimish',
+  level: '\u001b[31merror\u001b[39m',
+  message: 'values not found in database',
+  timestamp: '2021-08-21 20:01:01' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:01:45' }
+{ message: 'validated correctly',
+  level: '\u001b[33mwarn\u001b[39m',
+  timestamp: '2021-08-21 20:01:46' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:03:12' }
+{ username: 'nimish',
+  level: '\u001b[31merror\u001b[39m',
+  message: 'values not found in database',
+  timestamp: '2021-08-21 20:03:12' }
+{ username: 'nimish',
+  level: '\u001b[31merror\u001b[39m',
+  message: 'values not found in database',
+  timestamp: '2021-08-21 20:03:16' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:03:16' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:03:27' }
+{ message: 'validated correctly',
+  level: '\u001b[33mwarn\u001b[39m',
+  timestamp: '2021-08-21 20:03:28' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:03:30' }
+{ username: 'nimish',
+  level: '\u001b[31merror\u001b[39m',
+  message: 'values not found in database',
+  timestamp: '2021-08-21 20:03:30' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:04:53' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:04:54' }
+{ message: 'validated correctly',
+  level: '\u001b[33mwarn\u001b[39m',
+  timestamp: '2021-08-21 20:04:55' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:05:02' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:05:02' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:05:10' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:05:10' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:12:40' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:12:40' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:12:42' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:12:42' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:15:01' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:15:02' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:15:02' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:15:03' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:15:04' }
+{ message:
+   { verificationStatus: 'true',
+     name: 'Nimish Jain',
+     username: 'nimish',
+     email: 'nimish.jain2020@vitstudent.ac.in',
+     mobile: 9304917126,
+     regNo: '20BIT0270',
+     gender: 'M',
+     scope: [ 'user' ],
+     iat: 1629451489,
+     exp: 1629797089 },
+  level: '\u001b[33mwarn\u001b[39m',
+  timestamp: '2021-08-21 20:15:04' }
+{ message: null,
+  level: '\u001b[33mwarn\u001b[39m',
+  timestamp: '2021-08-21 20:15:04' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:15:45' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:15:46' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:15:46' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:15:47' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:15:48' }
+{ message:
+   { verificationStatus: 'true',
+     name: 'Nimish Jain',
+     username: 'nimish',
+     email: 'nimish.jain2020@vitstudent.ac.in',
+     mobile: 9304917126,
+     regNo: '20BIT0270',
+     gender: 'M',
+     scope: [ 'user' ],
+     iat: 1629451489,
+     exp: 1629797089 },
+  level: '\u001b[33mwarn\u001b[39m',
+  timestamp: '2021-08-21 20:15:48' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:17:00' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:17:01' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:17:01' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:17:03' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:17:03' }
+{ message:
+   { verificationStatus: 'true',
+     name: 'Nimish Jain',
+     username: 'nimish',
+     email: 'nimish.jain2020@vitstudent.ac.in',
+     mobile: 9304917126,
+     regNo: '20BIT0270',
+     gender: 'M',
+     scope: [ 'user' ],
+     iat: 1629451489,
+     exp: 1629797089 },
+  level: '\u001b[33mwarn\u001b[39m',
+  timestamp: '2021-08-21 20:17:04' }
+{ message: null,
+  level: '\u001b[33mwarn\u001b[39m',
+  timestamp: '2021-08-21 20:17:04' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:18:12' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:18:19' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:18:19' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:18:21' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:18:21' }
+{ message:
+   { verificationStatus: 'true',
+     name: 'Nimish Jain',
+     username: 'nimish',
+     email: 'nimish.jain2020@vitstudent.ac.in',
+     mobile: 9304917126,
+     regNo: '20BIT0270',
+     gender: 'M',
+     scope: [ 'user' ],
+     iat: 1629451489,
+     exp: 1629797089 },
+  level: '\u001b[33mwarn\u001b[39m',
+  timestamp: '2021-08-21 20:18:22' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:20:11' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:20:12' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:20:12' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:20:14' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:20:14' }
+{ message:
+   { verificationStatus: 'true',
+     name: 'Nimish Jain',
+     username: 'nimish',
+     email: 'nimish.jain2020@vitstudent.ac.in',
+     mobile: 9304917126,
+     regNo: '20BIT0270',
+     gender: 'M',
+     scope: [ 'user' ],
+     iat: 1629451489,
+     exp: 1629797089 },
+  level: '\u001b[33mwarn\u001b[39m',
+  timestamp: '2021-08-21 20:20:16' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:21:10' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:21:10' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:21:10' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:21:11' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:21:12' }
+{ message:
+   { verificationStatus: 'true',
+     name: 'Nimish Jain',
+     username: 'nimish',
+     email: 'nimish.jain2020@vitstudent.ac.in',
+     mobile: 9304917126,
+     regNo: '20BIT0270',
+     gender: 'M',
+     scope: [ 'user' ],
+     iat: 1629451489,
+     exp: 1629797089 },
+  level: '\u001b[33mwarn\u001b[39m',
+  timestamp: '2021-08-21 20:21:13' }
+{ message: null,
+  level: '\u001b[33mwarn\u001b[39m',
+  timestamp: '2021-08-21 20:21:13' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:22:00' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:22:00' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:22:00' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:22:03' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:22:03' }
+{ message:
+   { verificationStatus: 'true',
+     name: 'Nimish Jain',
+     username: 'nimish',
+     email: 'nimish.jain2020@vitstudent.ac.in',
+     mobile: 9304917126,
+     regNo: '20BIT0270',
+     gender: 'M',
+     scope: [ 'user' ],
+     iat: 1629451489,
+     exp: 1629797089 },
+  level: '\u001b[33mwarn\u001b[39m',
+  timestamp: '2021-08-21 20:22:05' }
+{ message: [],
+  level: '\u001b[33mwarn\u001b[39m',
+  timestamp: '2021-08-21 20:22:05' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:23:24' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:23:24' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:23:29' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:23:30' }
+{ message:
+   { verificationStatus: 'true',
+     name: 'Nimish Jain',
+     username: 'nimish',
+     email: 'nimish.jain2020@vitstudent.ac.in',
+     mobile: 9304917126,
+     regNo: '20BIT0270',
+     gender: 'M',
+     scope: [ 'user' ],
+     iat: 1629451489,
+     exp: 1629797089 },
+  level: '\u001b[33mwarn\u001b[39m',
+  timestamp: '2021-08-21 20:23:34' }
+{ message: [],
+  level: '\u001b[33mwarn\u001b[39m',
+  timestamp: '2021-08-21 20:23:35' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:24:58' }
+{ message: 'validated correctly',
+  level: '\u001b[33mwarn\u001b[39m',
+  timestamp: '2021-08-21 20:24:58' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:24:59' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:24:59' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:25:00' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:25:00' }
+{ message:
+   { verificationStatus: 'true',
+     name: 'Nimish Jain',
+     username: 'nimish',
+     email: 'nimish.jain2020@vitstudent.ac.in',
+     mobile: 9304917126,
+     regNo: '20BIT0270',
+     gender: 'M',
+     scope: [ 'user' ],
+     iat: 1629451489,
+     exp: 1629797089 },
+  level: '\u001b[33mwarn\u001b[39m',
+  timestamp: '2021-08-21 20:25:01' }
+{ message:
+   { verificationStatus: 'true',
+     name: 'Nimish Jain',
+     username: 'nimish',
+     email: 'nimish.jain2020@vitstudent.ac.in',
+     mobile: 9304917126,
+     regNo: '20BIT0270',
+     gender: 'M',
+     scope: [ 'user' ],
+     iat: 1629451489,
+     exp: 1629797089 },
+  level: '\u001b[33mwarn\u001b[39m',
+  timestamp: '2021-08-21 20:27:01' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:30:19' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:30:20' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:30:20' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:30:21' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:30:21' }
+{ message:
+   { verificationStatus: 'true',
+     name: 'Nimish Jain',
+     username: 'nimish',
+     email: 'nimish.jain2020@vitstudent.ac.in',
+     mobile: 9304917126,
+     regNo: '20BIT0270',
+     gender: 'M',
+     scope: [ 'user' ],
+     iat: 1629451489,
+     exp: 1629797089 },
+  level: '\u001b[33mwarn\u001b[39m',
+  timestamp: '2021-08-21 20:30:24' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:31:22' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:31:23' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:31:23' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:31:26' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:31:26' }
+{ message:
+   { verificationStatus: 'true',
+     name: 'Nimish Jain',
+     username: 'nimish',
+     email: 'nimish.jain2020@vitstudent.ac.in',
+     mobile: 9304917126,
+     regNo: '20BIT0270',
+     gender: 'M',
+     scope: [ 'user' ],
+     iat: 1629451489,
+     exp: 1629797089 },
+  level: '\u001b[33mwarn\u001b[39m',
+  timestamp: '2021-08-21 20:31:26' }
+{ username: 'nimish',
+  questionID: 1,
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'hint given for requested question',
+  timestamp: '2021-08-21 20:31:37' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:31:38' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:31:38' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:31:42' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:31:43' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:31:43' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:31:45' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:31:45' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:31:45' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:31:46' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:31:50' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:31:51' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:31:51' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:32:06' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:32:07' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:32:07' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:32:07' }
+{ username: 'nimish',
+  questionID: 1,
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'answer correct',
+  timestamp: '2021-08-21 20:32:34' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:32:37' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:32:37' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:32:40' }
+{ username: 'nimish',
+  questionID: 5,
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'question returned and locked successfully',
+  timestamp: '2021-08-21 20:32:40' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:32:40' }
+{ message:
+   { verificationStatus: 'true',
+     name: 'Nimish Jain',
+     username: 'nimish',
+     email: 'nimish.jain2020@vitstudent.ac.in',
+     mobile: 9304917126,
+     regNo: '20BIT0270',
+     gender: 'M',
+     scope: [ 'user' ],
+     iat: 1629451489,
+     exp: 1629797089 },
+  level: '\u001b[33mwarn\u001b[39m',
+  timestamp: '2021-08-21 20:32:42' }
+{ username: 'nimish',
+  questionID: 5,
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'hint given for requested question',
+  timestamp: '2021-08-21 20:32:44' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:32:45' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:32:45' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:33:35' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:33:36' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:33:36' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:33:42' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:33:42' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:33:43' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:33:43' }
+{ username: 'nimish',
+  questionID: 5,
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'answer correct',
+  timestamp: '2021-08-21 20:34:10' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:34:12' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:34:12' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:34:15' }
+{ username: 'nimish',
+  questionID: 2,
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'question returned and locked successfully',
+  timestamp: '2021-08-21 20:34:15' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:34:16' }
+{ message:
+   { verificationStatus: 'true',
+     name: 'Nimish Jain',
+     username: 'nimish',
+     email: 'nimish.jain2020@vitstudent.ac.in',
+     mobile: 9304917126,
+     regNo: '20BIT0270',
+     gender: 'M',
+     scope: [ 'user' ],
+     iat: 1629451489,
+     exp: 1629797089 },
+  level: '\u001b[33mwarn\u001b[39m',
+  timestamp: '2021-08-21 20:34:18' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:34:19' }
+{ username: 'nimish',
+  questionID: 2,
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'hint given for requested question',
+  timestamp: '2021-08-21 20:34:20' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:34:21' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:34:23' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:37:06' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:37:07' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:37:07' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:37:09' }
+{ message: 'validated correctly',
+  level: '\u001b[33mwarn\u001b[39m',
+  timestamp: '2021-08-21 20:37:10' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:40:27' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:40:27' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:40:56' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:40:57' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:40:57' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:40:57' }
+{ username: 'nimish',
+  questionID: 2,
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'answer correct',
+  timestamp: '2021-08-21 20:41:09' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:41:11' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:41:11' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:41:15' }
+{ username: 'nimish',
+  questionID: 3,
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'question returned and locked successfully',
+  timestamp: '2021-08-21 20:41:15' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:41:15' }
+{ username: 'nimish',
+  questionID: 3,
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'answer correct',
+  timestamp: '2021-08-21 20:41:54' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:41:56' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:41:57' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:42:03' }
+{ username: 'nimish',
+  questionID: 6,
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'question returned and locked successfully',
+  timestamp: '2021-08-21 20:42:06' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:42:08' }
+{ username: 'nimish',
+  questionID: 6,
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'answer correct',
+  timestamp: '2021-08-21 20:42:21' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:42:23' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:42:23' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:42:33' }
+{ username: 'nimish',
+  questionID: 8,
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'question returned and locked successfully',
+  timestamp: '2021-08-21 20:42:33' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:42:33' }
+{ username: 'nimish',
+  questionID: 8,
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'answer correct',
+  timestamp: '2021-08-21 20:42:54' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:42:56' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:42:56' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:43:00' }
+{ username: 'nimish',
+  questionID: 7,
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'question returned and locked successfully',
+  timestamp: '2021-08-21 20:43:00' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:43:00' }
+{ username: 'nimish',
+  questionID: 7,
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'answer correct',
+  timestamp: '2021-08-21 20:43:26' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:43:29' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:43:29' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:43:32' }
+{ username: 'nimish',
+  questionID: 4,
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'question returned and locked successfully',
+  timestamp: '2021-08-21 20:43:32' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:43:32' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:43:42' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:43:42' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:43:49' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:43:49' }
+{ username: 'nimish',
+  questionID: 4,
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'answer correct',
+  timestamp: '2021-08-21 20:44:17' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:44:20' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:44:20' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:44:28' }
+{ username: 'nimish',
+  questionID: 9,
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'question returned and locked successfully',
+  timestamp: '2021-08-21 20:44:29' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:44:29' }
+{ username: 'nimish',
+  questionID: 9,
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'answer correct',
+  timestamp: '2021-08-21 20:44:40' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:44:42' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:44:42' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:46:29' }
+{ message: 'validated correctly',
+  level: '\u001b[33mwarn\u001b[39m',
+  timestamp: '2021-08-21 20:46:31' }
+{ username: 'nimish',
+  level: '\u001b[33mwarn\u001b[39m',
+  message: 'validated correctly',
+  timestamp: '2021-08-21 20:48:20' }
+{ message: 'validated correctly',
+  level: '\u001b[33mwarn\u001b[39m',
+  timestamp: '2021-08-21 20:48:20' }

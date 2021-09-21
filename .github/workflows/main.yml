@@ -1,0 +1,51 @@
+# This workflow will do a clean install of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: CI-CD
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ final ]
+  pull_request:
+    branches: [ final ]
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+  
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+  # This workflow contains multiple jobs
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm i
+  
+  deploy:
+    needs: build
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: Deploying on Server
+      uses: actions/checkout@v2
+    - uses: appleboy/ssh-action@master
+      with: 
+        host: ${{secrets.HOST}}
+        username: deploy
+        key: ${{ secrets.KEY }}
+        port: 22
+        script: |
+          cd riddler-backend-2021/
+          git pull
+          docker cp riddler-backend-2021_db_1:/app/logs "./logs-$(date)"
+          docker stop riddler-backend-2021_db_1
+          docker rm riddler-backend-2021_db_1
+          docker-compose up --build -d

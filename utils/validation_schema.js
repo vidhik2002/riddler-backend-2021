@@ -1,19 +1,18 @@
 const Joi = require("joi");
 
 const authPenaltySchema = Joi.object().keys({
-    uname: Joi.string().alphanum().min(3).max(30).required(),
-    newquesId: Joi.number().integer().required(),
-    condition: Joi.boolean(),
+  quesId: Joi.number().integer().max(40).min(1).required(),
 });
 const authUserSchema = Joi.object().keys({
-    uname: Joi.string().alphanum().min(3).max(30).required(),
-    quesId: Joi.number().integer().required(),
-    limit:  Joi.number().integer().min(1).max(2),
-    ans: Joi.array().items(Joi.string(Joi.ref('limit')).required()),
-    });
+  quesId: Joi.number().integer().max(40).min(1).required(),
+  answer: Joi.string().min(1).max(200).required(),
+});
+const quesSchema = Joi.object().keys({
+  quesId: Joi.number().integer().max(40).min(1).required(),
+});
 
-
-module.exports = (
-    authUserSchema,
-    authPenaltySchema
-)
+module.exports = {
+  authUserSchema,
+  authPenaltySchema,
+  quesSchema,
+};
